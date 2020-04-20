@@ -14,7 +14,9 @@ body {
     overflow-x: hidden;
 }
 
-h1,
+h1 {
+    font-size: 1.8rem;
+}
 h2,
 h3,
 h4,
