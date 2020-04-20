@@ -37,6 +37,7 @@ http://www.templatemo.com/tm-517-timeless
         .custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
         .custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}            
     </style>
+    
 </head>
 
 <body>
@@ -76,8 +77,8 @@ http://www.templatemo.com/tm-517-timeless
                     </div>
                     <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
                     <div class="custom_zoomcontrol radius_border"> 
-                        <span onclick="zoomIn()"><img src="./img/ico_plus.png" alt="확대"></span>  
-                        <span onclick="zoomOut()"><img src="./img/ico_minus.png" alt="축소"></span>
+                        <span onclick="zoomIn()"><img src="img/ico_plus.png" alt="확대"></span>  
+                        <span onclick="zoomOut()"><img src="img/ico_minus.png" alt="축소"></span>
                     </div>
                      
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
@@ -102,6 +103,9 @@ http://www.templatemo.com/tm-517-timeless
                                 roadmapControl.className = 'btn';
                             }
                         }
+                        
+
+
 
                         // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
                         function zoomIn() {
