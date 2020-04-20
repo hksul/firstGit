@@ -90,8 +90,8 @@ http://www.templatemo.com/tm-517-timeless
                     }
                     function resizeMap() {
                         var mapContainer = document.getElementById('map');
-                        mapContainer.style.width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);;
-                        mapContainer.style.height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                        mapContainer.style.width = document.documentElement.clientWidth;
+                        mapContainer.style.height = document.documentElement.clientHeight;
                     }
 
                     function relayout() {    
