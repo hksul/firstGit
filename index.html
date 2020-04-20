@@ -53,17 +53,17 @@ http://www.templatemo.com/tm-517-timeless
                     }
                 </style>
                 <div class="google-maps">
-                    <div id="map" style="width:1200px;height:800px;">
-                        <div class="custom_typecontrol radius_border">
-                            <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
-                            <span id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</span>
-                        </div>
-                        <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
-                        <div class="custom_zoomcontrol radius_border"> 
-                            <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
-                            <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
-                        </div>
+                    <div id="map" style="width:1200px;height:800px;"></div>
+                    <div class="custom_typecontrol radius_border">
+                        <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
+                        <span id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</span>
                     </div>
+                    <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+                    <div class="custom_zoomcontrol radius_border"> 
+                        <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+                        <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                    </div>
+                     
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
                     <script>
                         var container = document.getElementById('map');
