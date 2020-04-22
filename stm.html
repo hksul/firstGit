@@ -223,7 +223,7 @@
             
             if (val=="option2") {
                 if ((idx = options.indexOf(val)) > -1) {
-                    Object.keys(dataPositions[val]).forEach(function(key1) {
+                    Object.keys(dataPositions[val]).forEach(function(key) {
                         for (var j = 0; j < dataPositions[val][key].length; j ++) {
                     
                             addMarker(positions[val][j].latlng);
