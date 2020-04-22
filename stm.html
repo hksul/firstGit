@@ -252,8 +252,10 @@
                     });
                     
                 } else {
+                    console.log("unclicking drop1", val);
                     Object.keys(dataPositions2[val]).forEach(function(key) {
                         setMarkers(val, key, null) ;
+                        console.log("deleting marker ", val, key);
                     });
                 };
             } else if (typeList.indexOf(val) >= 0){
