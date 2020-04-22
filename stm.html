@@ -118,8 +118,12 @@
             var map = new kakao.maps.Map(container, options);
             var markers = {};
             var optionList = ['dongjak','sungdong','jongro','yongsan','joonggu' ,'dongdaemoon' ,'seocho' ,'mapo' ,'kwanak' ,'kwangjin' ,'songpa' ,'seodaemoon' ,'guro'  ,'nowon','dobong','gangseo','gangdong','sungbook','kangbook','yangcheon','eunpyoung','geumcheon','yungdeungpo']
+            var typeList = ['coffee', 'food', 'convenience', 'other']
             for (var i = 0; i < optionList.length; i++) {
-                markers[optionList[i]] = [];
+                markers[optionList[i]] = {}
+                for (var j = 0; j < typeList.length; j++) {
+                    markers[optionList[i]][typeList[j]] = [];
+                }
             }
             if (navigator.geolocation) {
                 
@@ -237,19 +241,40 @@
         
             $(event.target).blur();
 
+            if (optionList.indexOf(val) >= 0) {
+                if ((idx = options.indexOf(val)) > -1) {
+                    Object.keys(dataPositions2[val]).forEach(function(key) {
+                        for (var j = 0; j < dataPositions2[val][key].length; j ++) {
+                    
+                            addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng);
+                        }
+                        setMarkers(val, key, map) ;                            
+                    });
+                    
+                } else {
+                    Object.keys(dataPositions2[val]).forEach(function(key) {
+                        setMarkers(val, key, null) ;
+                    });
+                };
+            } else if (typeList.indexof(val) >= 0){
 
-            if ((idx = options.indexOf(val)) > -1) {
-                Object.keys(dataPositions2[val]).forEach(function(key) {
-                    for (var j = 0; j < dataPositions2[val][key].length; j ++) {
-                
-                        addMarker(val, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng);
+                if ((idx = options.indexOf(val)) > -1) {
+                    for (var i = 0; i < options.length; i++) {
+                        for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
+                            addMarker(options[i], val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                            //Do something
+                        }
                     }
-                                            
-                });
-                setMarkers(val, map) ;
-            } else {
-                setMarkers(val, null) ;
-            };
+                }
+                else {
+                    for (var i = 0; i < options.length; i++) {
+                        for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
+                            addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                            //Do something
+                        }
+                    }
+                }
+            }
             
             
         
@@ -270,7 +295,7 @@
             // 생성된 마커를 배열에 추가합니다
             markers[name].push(marker);
         }*/
-        function addMarker(name, x, y) {
+        function addMarker(name, k,  x, y) {
     
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
@@ -281,12 +306,12 @@
             marker.setMap(map);
             
             // 생성된 마커를 배열에 추가합니다
-            markers[name].push(marker);
+            markers[name][k].push(marker);
         }
 
-        function setMarkers(name, map) {
+        function setMarkers(name, k, map) {
             for (var i = 0; i < markers[name].length; i++) {
-                markers[name][i].setMap(map);
+                markers[name][k][i].setMap(map);
             }            
         }
         /*
