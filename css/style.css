@@ -19,6 +19,12 @@ h1 span:nth-child(1){
 .container  {
     text-align: left; 
 }
+#dm1 {
+    text-align: : left;
+}
+#dm2 {
+    text-align: : right;
+}
 .dropdown-menu  {
     text-align: right; 
 }
