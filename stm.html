@@ -264,14 +264,19 @@
                             addMarker(options[i], val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
                             //Do something
                         }
+                        setMarkers(options[i], val, map) ;       
                     }
                 }
                 else {
                     for (var i = 0; i < options.length; i++) {
+                        /*
                         for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
-                            addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                            //addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                            //setMarkers(val, key, null) ;       
                             //Do something
                         }
+                        */
+                        setMarkers(options[i], val, null) ;     
                     }
                 }
             }
