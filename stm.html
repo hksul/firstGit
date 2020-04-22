@@ -232,14 +232,28 @@
             $inp = $target.find('input'),
             idx;
         
-            if ((idx = regions.indexOf(val)) > -1) {
-                regions.splice(idx, 1);
-                setTimeout(function () {$inp.prop('checked', false);}, 0);
-            } else {
-                regions.push(val);
-                setTimeout(function () {$inp.prop('checked', true);}, 0);
+            if ((idx = optionList.indexOf(val)) > -1) {
+                if ((idx = regions.indexOf(val)) > -1) {
+                    regions.splice(idx, 1);
+                    setTimeout(function () {$inp.prop('checked', false);}, 0);
+                } else {
+                    regions.push(val);
+                    setTimeout(function () {$inp.prop('checked', true);}, 0);
+                }
             }
         
+            if ((idx = typeList.indexOf(val)) > -1) {
+                if ((idx = types.indexOf(val)) > -1) {
+                    types.splice(idx, 1);
+
+                    setTimeout(function () {$inp.prop('checked', false);}, 0);
+                } else {
+                    types.push(val);
+                    setTimeout(function () {$inp.prop('checked', true);}, 0);
+                    
+                }
+            }
+
             $(event.target).blur();
 
             if (optionList.indexOf(val) >= 0) {
