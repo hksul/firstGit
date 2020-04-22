@@ -198,9 +198,11 @@
             });
         });
     </script>
+    <script src='js/data.js'></script>
     <script id="rendered-js">
         var options = [];
         
+   
         $('.dropdown-menu a').on('click', function (event) {
         
             var $target = $(event.currentTarget),
@@ -221,7 +223,10 @@
             
             if (val=="option7") {
                 if ((idx = options.indexOf(val)) > -1) {
-                    addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
+                    for (var i = 0; i < positions.length; i ++) {
+                        addMarker(positions[i].latlng);
+                                                
+                    }
                     setMarkers(map) 
                 } else {
                     setMarkers(null) 
