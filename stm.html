@@ -258,7 +258,7 @@
                 };
             } else if (typeList.indexOf(val) >= 0){
 
-                if ((idx = options.indexOf(val)) > -1) {
+                if ((idx = typeList.indexOf(val)) > -1) {
                     for (var i = 0; i < options.length; i++) {
                         for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
                             addMarker(options[i], val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
