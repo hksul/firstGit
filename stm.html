@@ -221,7 +221,8 @@
     <script src='js/data.js'></script>
     <script src='js/data.json'></script>
     <script id="rendered-js">
-        var options = [];
+        var regions = [];
+        var types = ['coffee', 'food', 'convenience', 'other', 'bread']
         
    
         $('.dropdown-menu a').on('click', function (event) {
@@ -231,18 +232,18 @@
             $inp = $target.find('input'),
             idx;
         
-            if ((idx = options.indexOf(val)) > -1) {
-                options.splice(idx, 1);
+            if ((idx = regions.indexOf(val)) > -1) {
+                regions.splice(idx, 1);
                 setTimeout(function () {$inp.prop('checked', false);}, 0);
             } else {
-                options.push(val);
+                regions.push(val);
                 setTimeout(function () {$inp.prop('checked', true);}, 0);
             }
         
             $(event.target).blur();
 
             if (optionList.indexOf(val) >= 0) {
-                if ((idx = options.indexOf(val)) > -1) {
+                if ((idx = regions.indexOf(val)) > -1) {
                     console.log("clicking drop1", val);
                     Object.keys(dataPositions2[val]).forEach(function(key) {
                         for (var j = 0; j < dataPositions2[val][key].length; j ++) {
@@ -262,20 +263,20 @@
                 };
             } else if (typeList.indexOf(val) >= 0){
 
-                if ((idx = typeList.indexOf(val)) > -1) {
+                if ((idx = types.indexOf(val)) > -1) {
                     console.log("clicking drop2", val);
-                    for (var i = 0; i < options.length; i++) {
-                        for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
-                            addMarker(options[i], val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                    for (var i = 0; i < regions.length; i++) {
+                        for (var j = 0; j < dataPositions2[regions[i]][val].length; j++) {
+                            addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng);
                             //Do something
                         }
-                        setMarkers(options[i], val, map) ;      
-                        console.log("adding marker ", options[i], val); 
+                        setMarkers(regions[i], val, map) ;      
+                        console.log("adding marker ", regions[i], val); 
                     }
                 }
                 else {
                     console.log("unclicking drop2", val);
-                    for (var i = 0; i < options.length; i++) {
+                    for (var i = 0; i < regions.length; i++) {
                         /*
                         for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
                             //addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
@@ -283,16 +284,17 @@
                             //Do something
                         }
                         */
-                        setMarkers(options[i], val, null) ;     
+                        setMarkers(regions[i], val, null) ;     
 
-                        console.log("deleting marker ", options[i], val);
+                        console.log("deleting marker ", regions[i], val);
                     }
                 }
             }
             
             
         
-            console.log(options);
+            console.log(regions);
+            console.log(types)
             return false;
         });
         /*
