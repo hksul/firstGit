@@ -2,7 +2,7 @@ h1  {
     text-align: center;
     color: #228ae6;
     margin-top: 0px;
-    font-size: 70px;
+    font-size: 40px;
 }
 
 h1 span:nth-child(3){
@@ -21,4 +21,8 @@ h1 span:nth-child(1){
 }
 .dropdown-menu  {
     text-align: right; 
+}
+
+.button-group{
+    margin-top:15px
 }
