@@ -220,7 +220,7 @@
         
             $(event.target).blur();
 
-            
+            /*
             if (val=="option2") {
                 if ((idx = options.indexOf(val)) > -1) {
                     Object.keys(dataPositions[val]).forEach(function(key) {
@@ -239,6 +239,20 @@
             } else if (val == "option1") {
                 addMarker(new kakao.maps.LatLng(34.450701, 126.570667));
             }; 
+            */
+
+            if ((idx = options.indexOf(val)) > -1) {
+                Object.keys(dataPositions[val]).forEach(function(key) {
+                    for (var j = 0; j < dataPositions[val][key].length; j ++) {
+                
+                        addMarker(dataPositions[val][key][j].latlng);
+                    }
+                                            
+                });
+                setMarkers(map) ;
+            } else {
+                setMarkers(null) ;
+            };
             
             
         
