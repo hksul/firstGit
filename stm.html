@@ -249,7 +249,7 @@
                 Object.keys(dataPositions[val]).forEach(function(key) {
                     for (var j = 0; j < dataPositions[val][key].length; j ++) {
                 
-                        addMarker(dataPositions[val][key][j].latlng);
+                        addMarker(val, dataPositions[val][key][j].latlng);
                     }
                                             
                 });
@@ -263,7 +263,7 @@
             console.log(options);
             return false;
         });
-        function addMarker(position) {
+        function addMarker(name, position) {
     
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
@@ -274,7 +274,7 @@
             marker.setMap(map);
             
             // 생성된 마커를 배열에 추가합니다
-            markers.push(marker);
+            markers[name].push(marker);
         }
 
         function setMarkers(name, map) {
