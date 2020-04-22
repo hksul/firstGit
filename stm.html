@@ -243,11 +243,13 @@
 
             if (optionList.indexOf(val) >= 0) {
                 if ((idx = options.indexOf(val)) > -1) {
+                    console.log("clicking drop1", val);
                     Object.keys(dataPositions2[val]).forEach(function(key) {
                         for (var j = 0; j < dataPositions2[val][key].length; j ++) {
                     
                             addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng);
                         }
+                        console.log("adding  marker ", val, key);
                         setMarkers(val, key, map) ;                            
                     });
                     
@@ -261,15 +263,18 @@
             } else if (typeList.indexOf(val) >= 0){
 
                 if ((idx = typeList.indexOf(val)) > -1) {
+                    console.log("clicking drop2", val);
                     for (var i = 0; i < options.length; i++) {
                         for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
                             addMarker(options[i], val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
                             //Do something
                         }
-                        setMarkers(options[i], val, map) ;       
+                        setMarkers(options[i], val, map) ;      
+                        console.log("adding marker ", options[i], val); 
                     }
                 }
                 else {
+                    console.log("unclicking drop2", val);
                     for (var i = 0; i < options.length; i++) {
                         /*
                         for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
@@ -279,6 +284,8 @@
                         }
                         */
                         setMarkers(options[i], val, null) ;     
+
+                        console.log("deleting marker ", options[i], val);
                     }
                 }
             }
