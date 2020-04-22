@@ -203,6 +203,7 @@
         });
     </script>
     <script src='js/data.js'></script>
+    <script src='js/data.json'></script>
     <script id="rendered-js">
         var options = [];
         
@@ -246,10 +247,10 @@
             */
 
             if ((idx = options.indexOf(val)) > -1) {
-                Object.keys(dataPositions[val]).forEach(function(key) {
-                    for (var j = 0; j < dataPositions[val][key].length; j ++) {
+                Object.keys(dataPositions2[val]).forEach(function(key) {
+                    for (var j = 0; j < dataPositions2[val][key].length; j ++) {
                 
-                        addMarker(val, dataPositions[val][key][j].latlng);
+                        addMarker(val, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng);
                     }
                                             
                 });
@@ -263,11 +264,25 @@
             console.log(options);
             return false;
         });
+        /*
         function addMarker(name, position) {
     
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 position: position
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+            
+            // 생성된 마커를 배열에 추가합니다
+            markers[name].push(marker);
+        }*/
+        function addMarker(name, x, y) {
+    
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: new kakao.maps.LatLng(x,y)
             });
 
             // 마커가 지도 위에 표시되도록 설정합니다
