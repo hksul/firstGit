@@ -221,21 +221,24 @@
             $(event.target).blur();
 
             
-            if (val=="option7") {
+            if (val=="option2") {
                 if ((idx = options.indexOf(val)) > -1) {
-                    for (var i = 0; i < positions.length; i ++) {
-                        addMarker(positions[i].latlng);
+                    Object.keys(dataPositions[val]).forEach(function(key1) {
+                        for (var j = 0; j < dataPositions[val][key].length; j ++) {
+                    
+                            addMarker(positions[val][j].latlng);
+                        }
                                                 
                     }
-                    setMarkers(map) 
+                    setMarkers(map) ;
                 } else {
-                    setMarkers(null) 
-                }
+                    setMarkers(null) ;
+                };
                 
 
             } else if (val == "option1") {
                 addMarker(new kakao.maps.LatLng(34.450701, 126.570667));
-            }
+            };
             
             
         
