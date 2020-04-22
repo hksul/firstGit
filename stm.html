@@ -49,7 +49,7 @@
                     <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-cog"></span> 
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul id = "dm1" class="dropdown-menu">
                         <li><a href="#" class="small" data-value="gangdong" tabIndex="-1"><input type="checkbox"/>&nbsp;강동구</a></li>
                         <li><a href="#" class="small" data-value="kangbook" tabIndex="-1"><input type="checkbox"/>&nbsp;강북구</a></li>
                         <li><a href="#" class="small" data-value="gangseo" tabIndex="-1"><input type="checkbox"/>&nbsp;강서구</a></li>
@@ -73,6 +73,18 @@
                         <li><a href="#" class="small" data-value="eunpyoung" tabIndex="-1"><input type="checkbox"/>&nbsp;은평구</a></li>
                         <li><a href="#" class="small" data-value="jongro" tabIndex="-1"><input type="checkbox"/>&nbsp;종로구</a></li>
                         <li><a href="#" class="small" data-value="joonggu" tabIndex="-1"><input type="checkbox"/>&nbsp;중구</a></li>
+                    </ul>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-cog"></span> 
+                    </button>
+                    <ul id = "dm2" class="dropdown-menu">
+                        <li><a href="#" class="small" data-value="convenience" tabIndex="1"><input type="checkbox"/>&nbsp;편의점</a></li>
+                        <li><a href="#" class="small" data-value="food" tabIndex="1"><input type="checkbox"/>&nbsp;음식</a></li>
+                        <li><a href="#" class="small" data-value="coffee" tabIndex="1"><input type="checkbox"/>&nbsp;커피</a></li>
+                        <li><a href="#" class="small" data-value="other" tabIndex="1"><input type="checkbox"/>&nbsp;주유소 등</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -225,26 +237,6 @@
         
             $(event.target).blur();
 
-            /*
-            if (val=="option2") {
-                if ((idx = options.indexOf(val)) > -1) {
-                    Object.keys(dataPositions[val]).forEach(function(key) {
-                        for (var j = 0; j < dataPositions[val][key].length; j ++) {
-                    
-                            addMarker(dataPositions[val][key][j].latlng);
-                        }
-                                                
-                    });
-                    setMarkers(map) ;
-                } else {
-                    setMarkers(null) ;
-                };
-                
-
-            } else if (val == "option1") {
-                addMarker(new kakao.maps.LatLng(34.450701, 126.570667));
-            }; 
-            */
 
             if ((idx = options.indexOf(val)) > -1) {
                 Object.keys(dataPositions2[val]).forEach(function(key) {
