@@ -104,7 +104,11 @@
             };
 
             var map = new kakao.maps.Map(container, options);
-            var markers = [];
+            var markers = {};
+            var optionList = ["option1", "option2", "option3"]
+            for (var i = 0; i < optionList.length; i++) {
+                markers[result[i]] = [];
+            }
             if (navigator.geolocation) {
                 
                 // GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -249,9 +253,9 @@
                     }
                                             
                 });
-                setMarkers(map) ;
+                setMarkers(val, map) ;
             } else {
-                setMarkers(null) ;
+                setMarkers(val, null) ;
             };
             
             
@@ -273,12 +277,12 @@
             markers.push(marker);
         }
 
-        function setMarkers(map) {
-            for (var i = 0; i < markers.length; i++) {
-                markers[i].setMap(map);
+        function setMarkers(name, map) {
+            for (var i = 0; i < markers[name].length; i++) {
+                markers[name][i].setMap(map);
             }            
         }
-
+        /*
         // "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
         function showMarkers() {
             setMarkers(map)    
@@ -288,6 +292,7 @@
         function hideMarkers() {
             setMarkers(null);    
         }
+        */
         //# sourceURL=pen.js
     </script>
 
