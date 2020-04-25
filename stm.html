@@ -187,7 +187,24 @@
                 // 좌표로 행정동 주소 정보를 요청합니다
                 geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
             }
+            function displayCenterInfo(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    var infoDiv = document.getElementById('centerAddr');
+
+                    for(var i = 0; i < result.length; i++) {
+                        // 행정동의 region_type 값은 'H' 이므로
+                        if (result[i].region_type === 'H') {
+                            infoDiv.innerHTML = result[i].address_name;
+                            break;
+                        }
+                    }
+                }    
+            }
             searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+            kakao.maps.event.addListener(map, 'idle', function() {
+                searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+            });
+
             var container = document.getElementById('map');
             var options = {
                 center: new kakao.maps.LatLng(33.450701, 126.570667),
