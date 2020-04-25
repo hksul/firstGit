@@ -2,7 +2,7 @@ h1  {
     text-align: center;
     color: #228ae6;
     margin-top: 0px;
-    font-size: 30px;
+    font-size: 18px;
 }
 
 h1 span:nth-child(3){
@@ -30,4 +30,17 @@ h1 span:nth-child(1){
 .button-group{
     margin-top:15px;
    
+}
+
+.navbar-light  {
+    background-color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.navbar-brand {
+    float: left;
+    height: 25px;
+    padding: 0px 0px;
+    font-size: 18px;
+    line-height: 20px;
 }
