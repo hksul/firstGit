@@ -31,7 +31,7 @@ h1 span:nth-child(1){
     margin-top:15px;
    
 }
-
+/*
 .navbar-light  {
     background-color: black;
     margin-top: 0px;
@@ -44,3 +44,12 @@ h1 span:nth-child(1){
     font-size: 18px;
     line-height: 20px;
 }
+.navbar-toggler {
+    padding: 0px 0px;
+    text-align: right;
+}
+
+.nav-distance{
+    padding: 2.1% 7.7%;
+}
+*/
