@@ -177,6 +177,17 @@
         
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
+            var geocoder = new kakao.maps.services.Geocoder();
+
+            var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
+                infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
+
+            // 현재 지도 중심좌표로 주소를 검색해서 지도 좌측 상단에 표시합니다
+            function searchAddrFromCoords(coords, callback) {
+                // 좌표로 행정동 주소 정보를 요청합니다
+                geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
+            }
+            searchAddrFromCoords(map.getCenter(), displayCenterInfo);
             var container = document.getElementById('map');
             var options = {
                 center: new kakao.maps.LatLng(33.450701, 126.570667),
