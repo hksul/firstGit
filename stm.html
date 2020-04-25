@@ -155,11 +155,19 @@
                         <span class="ico_comm ico_coffee"></span>
                         커피숍
                     </li>
-                    <li id="storeMenu" onclick="changeMarker('store')">
+                    <li id="storeMenu" onclick="changeMarker('convenience')">
                         <span class="ico_comm ico_store"></span>
                         편의점
                     </li>
-                    <li id="carparkMenu" onclick="changeMarker('carpark')">
+                    <li id="carparkMenu" onclick="changeMarker('food')">
+                        <span class="ico_comm ico_carpark"></span>
+                        주차장
+                    </li>
+                    <li id="storeMenu" onclick="changeMarker('bread')">
+                        <span class="ico_comm ico_store"></span>
+                        편의점
+                    </li>
+                    <li id="carparkMenu" onclick="changeMarker('other')">
                         <span class="ico_comm ico_carpark"></span>
                         주차장
                     </li>
@@ -273,7 +281,7 @@
                     
                 
                     
-                } else if (type === 'store') { // 편의점 카테고리가 클릭됐을 때
+                } else if (type === 'convenience') { // 편의점 카테고리가 클릭됐을 때
                 
                     // 편의점 카테고리를 선택된 스타일로 변경하고
                     coffeeMenu.className = '';
@@ -287,7 +295,7 @@
                     hideMarkerType("bread")
                     hideMarkerType("other")
                     
-                } else if (type === 'carpark') { // 주차장 카테고리가 클릭됐을 때
+                } else if (type === 'food') { // 주차장 카테고리가 클릭됐을 때
                 
                     // 주차장 카테고리를 선택된 스타일로 변경하고
                     coffeeMenu.className = '';
@@ -295,9 +303,37 @@
                     carparkMenu.className = 'menu_selected';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
-                    setCoffeeMarkers(null);
-                    setStoreMarkers(null);
-                    setCarparkMarkers(map);  
+                    showMarkerType("food")
+                    hideMarkerType("convenience")
+                    hideMarkerType("coffee")
+                    hideMarkerType("bread")
+                    hideMarkerType("other")
+                }    else if (type === 'bread') { // 주차장 카테고리가 클릭됐을 때
+                    
+                    // 주차장 카테고리를 선택된 스타일로 변경하고
+                    coffeeMenu.className = '';
+                    storeMenu.className = '';
+                    carparkMenu.className = 'menu_selected';
+                    
+                    // 주차장 마커들만 지도에 표시하도록 설정합니다
+                    showMarkerType("bread")
+                    hideMarkerType("food")
+                    hideMarkerType("coffee")
+                    hideMarkerType("convenience")
+                    hideMarkerType("other")
+                }    else if (type === 'other') { // 주차장 카테고리가 클릭됐을 때
+                    
+                    // 주차장 카테고리를 선택된 스타일로 변경하고
+                    coffeeMenu.className = '';
+                    storeMenu.className = '';
+                    carparkMenu.className = 'menu_selected';
+                    
+                    // 주차장 마커들만 지도에 표시하도록 설정합니다
+                    showMarkerType("other")
+                    hideMarkerType("food")
+                    hideMarkerType("coffee")
+                    hideMarkerType("bread")
+                    hideMarkerType("convenience")
                 }    
             } 
             /*
