@@ -406,6 +406,7 @@
             function zoomOut() {
                 map.setLevel(map.getLevel() + 1);
             }
+            /*
             zoomIn()
             zoomOut()
             zoomOut()
@@ -436,6 +437,8 @@
             kakao.maps.event.addListener(map, 'idle', function() {
                 searchAddrFromCoords(map.getCenter(), displayCenterInfo);
             });
+
+            */
             
 
 
@@ -501,7 +504,7 @@
                     Object.keys(dataPositions2[val]).forEach(function(key) {
                         for (var j = 0; j < dataPositions2[val][key].length; j ++) {
                     
-                            addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng);
+                            addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng, dataPositions2[val][key][j].title);
                         }
                         console.log("adding  marker ", val, key);
                         setMarkers(val, key, map) ;                            
@@ -520,7 +523,7 @@
                     console.log("clicking drop2", val);
                     for (var i = 0; i < regions.length; i++) {
                         for (var j = 0; j < dataPositions2[regions[i]][val].length; j++) {
-                            addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng);
+                            addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng, dataPositions2[regions[i]][val][j].title);
                             //Do something
                         }
                         setMarkers(regions[i], val, map) ;      
@@ -564,7 +567,7 @@
             // 생성된 마커를 배열에 추가합니다
             markers[name].push(marker);
         }*/
-        function addMarker(name, k2,  x, y) {
+        function addMarker(name, k2,  x, y, title) {
     
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
@@ -574,6 +577,18 @@
             // 마커가 지도 위에 표시되도록 설정합니다
             marker.setMap(map);
             
+            var iwContent = '<div style="padding:5px;">'+title+'<br></div>',
+                iwPosition = new kakao.maps.LatLng(y, x); //인포윈도우 표시 위치입니다
+
+            // 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+                position : iwPosition, 
+                content : iwContent 
+            });
+            
+            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+            infowindow.open(map, marker); 
+
             // 생성된 마커를 배열에 추가합니다
             console.log(name, k2,  x, y);
             markers[name][k2].push(marker);
