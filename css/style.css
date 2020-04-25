@@ -31,6 +31,11 @@ h1 span:nth-child(1){
     margin-top:15px;
    
 }
+
+.category-width{
+    width: 100px;
+   
+}
 /*
 .navbar-light  {
     background-color: black;

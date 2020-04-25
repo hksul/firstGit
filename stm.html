@@ -42,8 +42,8 @@
         .category .ico_coffee {background-position:-10px 0;}  
         .category .ico_store {background-position:-10px -36px;}   
         .category .ico_carpark {background-position:-10px -72px;} 
-        .category .ico_4 {background-position:-10px -108px;} 
-        .category .ico_5 {background-position:-10px -144px;} 
+        .category .ico_bread {background-position:-10px -108px;} 
+        .category .ico_other {background-position:-10px -144px;} 
         .custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
         .custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
         .custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
@@ -127,8 +127,7 @@
                         <li><a href="#" class="small" data-value="food" tabIndex="-1"><input type="checkbox" checked/>&nbsp;음식</a></li>
                         <li><a href="#" class="small" data-value="coffee" tabIndex="-1"><input type="checkbox" checked/>&nbsp;커피</a></li>
                         <li><a href="#" class="small" data-value="bread" tabIndex="-1"><input type="checkbox" checked/>&nbsp;빵집</a></li>
-                        <li><a href="#" class="small" data-value="other" tabIndex="-1"><input type="checkbox" checked/>&nbsp;주유소 등</a></li>
-                        
+                        <li><a href="#" class="small" data-value="other" tabIndex="-1"><input type="checkbox" checked/>&nbsp;주유소 등</a></li>                    
                     </ul>
                 </div>
             </div>
@@ -166,11 +165,11 @@
                         음식점
                     </li>
                     <li id="breadMenu" onclick="changeMarker('bread')">
-                        <span class="ico_comm ico_4"></span>
+                        <span class="ico_comm ico_bread"></span>
                         빵집
                     </li>
                     <li id="otherMenu" onclick="changeMarker('other')">
-                        <span class="ico_comm ico_5"></span>
+                        <span class="ico_comm ico_other"></span>
                         기타/주유소
                     </li>
                 </ul>
@@ -271,8 +270,6 @@
                 
                     // 커피숍 카테고리를 선택된 스타일로 변경하고
                     coffeeMenu.className = 'menu_selected';
-                    
-                    // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
                     storeMenu.className = '';
                     carparkMenu.className = '';
                     breadMenu.className = '';
