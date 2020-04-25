@@ -33,6 +33,15 @@
         .custom_typecontrol .selected_btn {color:#fff;background:#425470;background:linear-gradient(#425470, #5b6d8a);}
         .custom_typecontrol .selected_btn:hover {color:#fff;}   
         */
+        #mapwrap{position:relative;overflow:hidden;}
+        .category, .category *{margin:0;padding:0;color:#000;}   
+        .category {position:absolute;overflow:hidden;top:10px;left:10px;width:150px;height:50px;z-index:10;border:1px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
+        .category .menu_selected {background:#FF5F4A;color:#fff;border-left:1px solid #915B2F;border-right:1px solid #915B2F;margin:0 -1px;} 
+        .category li{list-style:none;float:left;width:50px;height:45px;padding-top:5px;cursor:pointer;} 
+        .category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;} 
+        .category .ico_coffee {background-position:-10px 0;}  
+        .category .ico_store {background-position:-10px -36px;}   
+        .category .ico_carpark {background-position:-10px -72px;} 
         .custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
         .custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
         .custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
@@ -109,7 +118,22 @@
             <span onclick="zoomOut()"><img src="img/ico_minus.png" alt="축소"></span>
         </div>
          -->
-            
+         <div class="category">
+            <ul>
+                <li id="coffeeMenu" onclick="changeMarker('coffee')">
+                    <span class="ico_comm ico_coffee"></span>
+                    커피숍
+                </li>
+                <li id="storeMenu" onclick="changeMarker('store')">
+                    <span class="ico_comm ico_store"></span>
+                    편의점
+                </li>
+                <li id="carparkMenu" onclick="changeMarker('carpark')">
+                    <span class="ico_comm ico_carpark"></span>
+                    주차장
+                </li>
+            </ul>
+        </div>
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
             var container = document.getElementById('map');
