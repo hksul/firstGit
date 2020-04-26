@@ -473,6 +473,9 @@
             xAnchor: 0.3,
             yAnchor: 0.91
         });
+        var clickedOverlay = null;
+
+
         $('.dropdown-menu a').on('click', function (event) {
         
             var $target = $(event.currentTarget),
@@ -600,9 +603,16 @@
                 //infowindow.open(map, markerX);
 
                 //customOverlay.setMap(map);
-                customOverlay.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
-                customOverlay.open(map, markerX);
-            });
+                //customOverlay.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
+                //customOverlay.open(map, markerX);
+
+                if (clickedOverlay) {
+                        clickedOverlay.setMap(null);
+                    }
+                    customOverlay.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
+                    customOverlay.setMap(map);
+                    clickedOverlay = customOverlay;
+                });
 
             // 생성된 마커를 배열에 추가합니다
             console.log("sdfsd", name, k2,  x, y, title);
