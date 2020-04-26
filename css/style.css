@@ -28,11 +28,19 @@ h1 span:nth-child(1){
  
 
 .button-group{
-    margin-top:15px;
+    position:absolute;
+    overflow:visible;
+    top:10px;
+    right:10px;
+    
    
 }
  
 /*
+
+width:40px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;border-radius: 5px;border:1px;}
+
+
 .navbar-light  {
     background-color: black;
     margin-top: 0px;
