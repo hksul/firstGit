@@ -599,12 +599,13 @@
             kakao.maps.event.addListener(markerX, 'click', function() {
                 // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
                 
-                //infowindow.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
-                //infowindow.open(map, markerX);
+                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
+                infowindow.open(map, markerX);
 
                 //customOverlay.setMap(map);
                 //customOverlay.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
                 //customOverlay.open(map, markerX);
+                /*
 
                 if (clickedOverlay) {
                         clickedOverlay.setMap(null);
@@ -614,6 +615,7 @@
                     customOverlay.setCenter(y,x)
                     clickedOverlay = customOverlay;
                 });
+                */
 
             // 생성된 마커를 배열에 추가합니다
             console.log("sdfsd", name, k2,  x, y, title);
