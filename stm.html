@@ -187,7 +187,7 @@
             <div class="category2">
                 <ul>        
                     <li id="aMenu" onclick="moveToCurrent()">
-                        <span class="ico_comm ico_coffee"></span>
+                        <span class="ico_current"></span>
                         현재
                     </li>
                 </ul>
@@ -423,6 +423,7 @@
             }
             */
             function moveToCurrent() {
+                var aMenu = document.getElementById('aMenu');
                 aMenu.className = 'menu_selected';
                 if (navigator.geolocation) {
                     
