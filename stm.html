@@ -45,6 +45,7 @@
         .category .ico_carpark {background-position:-10px -72px;} 
         .category .ico_bread {background-position:-10px -36px;} 
         .category .ico_other {background-position:-10px -72px;} 
+        .category .ico_current {background-position:-10px 0;}  
         .custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
         .custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
         .custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
@@ -175,10 +176,14 @@
                         <span class="ico_comm ico_other"></span>
                         주유소
                     </li>
+                    <li id="aMenu" onclick="zoomIn()">
+                        <span class="ico_comm ico_current"></span>
+                        현재
+                    </li>
                 </ul>
             </div>
             <div class="category2">
-                <ul id = "dm1" class="dropdown-menu">
+                <ul id = "dm3" class="dropdown-menu">
                     <li><a href="#" class="small" data-value="gangdong" tabIndex="-1"><input type="checkbox"/>&nbsp;강동구</a></li>
                     <li><a href="#" class="small" data-value="kangbook" tabIndex="-1"><input type="checkbox"/>&nbsp;강북구</a></li>
                     <li><a href="#" class="small" data-value="gangseo" tabIndex="-1"><input type="checkbox"/>&nbsp;강서구</a></li>
