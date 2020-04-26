@@ -205,9 +205,9 @@
             <div class="custom_zoomcontrol radius_border"> 
                 <span onclick="moveToCurrent()">위치</span>
             </div>
-            <!--<div class="category3">-->
+            <div class="category3 radius_border">
             
-            <div class="custom_zoomcontrol2 radius_border"> 
+            
                  
                 <!--
                 <div class="dropdown">
@@ -294,7 +294,7 @@
             var container = document.getElementById('map');
             var options = {
                 center: new kakao.maps.LatLng(33.450701, 126.570667),
-                level: 3
+                level: 4
             };
             var markerImageSrc2 = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
             var map = new kakao.maps.Map(container, options);
