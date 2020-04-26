@@ -298,7 +298,7 @@
             function showMarkerType(val){
                 for (var i = 0; i < regions.length; i++) {
                     for (var j = 0; j < dataPositions2[regions[i]][val].length; j++) {
-                        addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng);
+                        addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng, dataPositions2[regions[i]][val][j].title);
                         //Do something
                     }
                     setMarkers(regions[i], val, map) ;      
