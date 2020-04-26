@@ -584,10 +584,14 @@
             // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
             // 이벤트 리스너로는 클로저를 만들어 등록합니다 
             // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다 
-            kakao.maps.event.addListener(markerX, 'mouseover', makeOverListener(map, markerX, infowindow));
-            kakao.maps.event.addListener(markerX, 'click', makeOverListener(map, markerX, infowindow));
-            kakao.maps.event.addListener(markerX, 'mouseout', makeOutListener(infowindow));
-                    
+            //kakao.maps.event.addListener(markerX, 'mouseover', makeOverListener(map, markerX, infowindow));            
+            //kakao.maps.event.addListener(markerX, 'mouseout', makeOutListener(infowindow));
+            //kakao.maps.event.addListener(markerX, 'click', makeOverListener(map, markerX, infowindow));
+            kakao.maps.event.addListener(markerX, 'click', function() {
+                // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
+                infowindow.open(map, markerX);
+            });
 
             // 생성된 마커를 배열에 추가합니다
             console.log("sdfsd", name, k2,  x, y, title);
