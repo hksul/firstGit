@@ -36,6 +36,7 @@
         /*#mapwrap{position:relative;overflow:hidden;}*/
         .category, .category *{margin:0;padding:0;color:#000;}   
         .category {position:absolute;overflow:hidden;top:10px;left:10px;width:300px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
+        .category2 {position:absolute;overflow:hidden;top:10px;left:330px;width:300px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
         .category .menu_selected {background:#FF5F4A;color:#fff;border-left:0px solid #915B2F;border-right:0px solid #915B2F; border-bottom: -3px; margin:0 0px;} 
         .category li{list-style:none;float:left;width:50px;height:45px;padding-top:5px;cursor:pointer;} 
         .category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://hkhomepage.netlify.app/img/category2.png') no-repeat;} 
@@ -175,36 +176,33 @@
                         주유소
                     </li>
                 </ul>
-                <div class="button-group">
-                    <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-cog"> 지역</span> 
-                    </button>
-                    <ul id = "dm1" class="dropdown-menu">
-                        <li><a href="#" class="small" data-value="gangdong" tabIndex="-1"><input type="checkbox"/>&nbsp;강동구</a></li>
-                        <li><a href="#" class="small" data-value="kangbook" tabIndex="-1"><input type="checkbox"/>&nbsp;강북구</a></li>
-                        <li><a href="#" class="small" data-value="gangseo" tabIndex="-1"><input type="checkbox"/>&nbsp;강서구</a></li>
-                        <li><a href="#" class="small" data-value="kwanak" tabIndex="-1"><input type="checkbox"/>&nbsp;관악구</a></li>
-                        <li><a href="#" class="small" data-value="kwangjin" tabIndex="-1"><input type="checkbox"/>&nbsp;광진구</a></li>
-                        <li><a href="#" class="small" data-value="geumcheon" tabIndex="-1"><input type="checkbox"/>&nbsp;금천구</a></li>
-                        <li><a href="#" class="small" data-value="guro" tabIndex="-1"><input type="checkbox"/>&nbsp;구로구</a></li>
-                        <li><a href="#" class="small" data-value="nowon" tabIndex="-1"><input type="checkbox"/>&nbsp;노원구</a></li>
-                        <li><a href="#" class="small" data-value="dobong" tabIndex="-1"><input type="checkbox"/>&nbsp;도봉구</a></li>
-                        <li><a href="#" class="small" data-value="dongdaemoon" tabIndex="-1"><input type="checkbox"/>&nbsp;동대문구</a></li>
-                        <li><a href="#" class="small" data-value="dongjak" tabIndex="-1"><input type="checkbox"/>&nbsp;동작구</a></li>
-                        <li><a href="#" class="small" data-value="mapo" tabIndex="-1"><input type="checkbox"/>&nbsp;마포구</a></li>
-                        <li><a href="#" class="small" data-value="seodaemoon" tabIndex="-1"><input type="checkbox"/>&nbsp;서대문구</a></li>
-                        <li><a href="#" class="small" data-value="seocho" tabIndex="-1"><input type="checkbox"/>&nbsp;서초구</a></li>
-                        <li><a href="#" class="small" data-value="songpa" tabIndex="-1"><input type="checkbox"/>&nbsp;송파구</a></li>
-                        <li><a href="#" class="small" data-value="sungdong" tabIndex="-1"><input type="checkbox"/>&nbsp;성동구</a></li>
-                        <li><a href="#" class="small" data-value="sungbook" tabIndex="-1"><input type="checkbox"/>&nbsp;성북구</a></li>
-                        <li><a href="#" class="small" data-value="yangcheon" tabIndex="-1"><input type="checkbox"/>&nbsp;양천구</a></li>
-                        <li><a href="#" class="small" data-value="yungdeungpo" tabIndex="-1"><input type="checkbox"/>&nbsp;영등포구</a></li>
-                        <li><a href="#" class="small" data-value="yongsan" tabIndex="-1"><input type="checkbox"/>&nbsp;용산구</a></li>
-                        <li><a href="#" class="small" data-value="eunpyoung" tabIndex="-1"><input type="checkbox"/>&nbsp;은평구</a></li>
-                        <li><a href="#" class="small" data-value="jongro" tabIndex="-1"><input type="checkbox"/>&nbsp;종로구</a></li>
-                        <li><a href="#" class="small" data-value="joonggu" tabIndex="-1"><input type="checkbox"/>&nbsp;중구</a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="category2">
+                <ul id = "dm1" class="dropdown-menu">
+                    <li><a href="#" class="small" data-value="gangdong" tabIndex="-1"><input type="checkbox"/>&nbsp;강동구</a></li>
+                    <li><a href="#" class="small" data-value="kangbook" tabIndex="-1"><input type="checkbox"/>&nbsp;강북구</a></li>
+                    <li><a href="#" class="small" data-value="gangseo" tabIndex="-1"><input type="checkbox"/>&nbsp;강서구</a></li>
+                    <li><a href="#" class="small" data-value="kwanak" tabIndex="-1"><input type="checkbox"/>&nbsp;관악구</a></li>
+                    <li><a href="#" class="small" data-value="kwangjin" tabIndex="-1"><input type="checkbox"/>&nbsp;광진구</a></li>
+                    <li><a href="#" class="small" data-value="geumcheon" tabIndex="-1"><input type="checkbox"/>&nbsp;금천구</a></li>
+                    <li><a href="#" class="small" data-value="guro" tabIndex="-1"><input type="checkbox"/>&nbsp;구로구</a></li>
+                    <li><a href="#" class="small" data-value="nowon" tabIndex="-1"><input type="checkbox"/>&nbsp;노원구</a></li>
+                    <li><a href="#" class="small" data-value="dobong" tabIndex="-1"><input type="checkbox"/>&nbsp;도봉구</a></li>
+                    <li><a href="#" class="small" data-value="dongdaemoon" tabIndex="-1"><input type="checkbox"/>&nbsp;동대문구</a></li>
+                    <li><a href="#" class="small" data-value="dongjak" tabIndex="-1"><input type="checkbox"/>&nbsp;동작구</a></li>
+                    <li><a href="#" class="small" data-value="mapo" tabIndex="-1"><input type="checkbox"/>&nbsp;마포구</a></li>
+                    <li><a href="#" class="small" data-value="seodaemoon" tabIndex="-1"><input type="checkbox"/>&nbsp;서대문구</a></li>
+                    <li><a href="#" class="small" data-value="seocho" tabIndex="-1"><input type="checkbox"/>&nbsp;서초구</a></li>
+                    <li><a href="#" class="small" data-value="songpa" tabIndex="-1"><input type="checkbox"/>&nbsp;송파구</a></li>
+                    <li><a href="#" class="small" data-value="sungdong" tabIndex="-1"><input type="checkbox"/>&nbsp;성동구</a></li>
+                    <li><a href="#" class="small" data-value="sungbook" tabIndex="-1"><input type="checkbox"/>&nbsp;성북구</a></li>
+                    <li><a href="#" class="small" data-value="yangcheon" tabIndex="-1"><input type="checkbox"/>&nbsp;양천구</a></li>
+                    <li><a href="#" class="small" data-value="yungdeungpo" tabIndex="-1"><input type="checkbox"/>&nbsp;영등포구</a></li>
+                    <li><a href="#" class="small" data-value="yongsan" tabIndex="-1"><input type="checkbox"/>&nbsp;용산구</a></li>
+                    <li><a href="#" class="small" data-value="eunpyoung" tabIndex="-1"><input type="checkbox"/>&nbsp;은평구</a></li>
+                    <li><a href="#" class="small" data-value="jongro" tabIndex="-1"><input type="checkbox"/>&nbsp;종로구</a></li>
+                    <li><a href="#" class="small" data-value="joonggu" tabIndex="-1"><input type="checkbox"/>&nbsp;중구</a></li>
+                </ul>
             </div>
         
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
