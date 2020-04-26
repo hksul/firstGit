@@ -176,7 +176,7 @@
                         <span class="ico_comm ico_other"></span>
                         주유소
                     </li>
-                    <li id="aMenu" onclick="zoomIn()">
+                    <li id="aMenu" onclick="moveToCurrent()">
                         <span class="ico_comm ico_current"></span>
                         현재
                     </li>
@@ -404,7 +404,26 @@
                 }
             }
             */
-
+            function moveToCurrent() {
+                if (navigator.geolocation) {
+                    
+                    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        
+                        
+                        
+                        var moveLatLon = new kakao.maps.LatLng(position.coords.latitude,  position.coords.longitude);
+                        
+                        // 지도 중심을 부드럽게 이동시킵니다
+                        // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+                        map.panTo(moveLatLon);   
+                            
+                    });
+                    
+                }
+                
+                      
+            }
             // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
             function zoomIn() {
                 map.setLevel(map.getLevel() - 1);
