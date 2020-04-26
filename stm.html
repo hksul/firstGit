@@ -336,12 +336,13 @@
                     
                 displayMarker(locPosition, message);
             }
-            resizeMap();
+            container.style.height =  window.innerHeight+"px"; 
+            //resizeMap();
             function resizeMap() {
                 //var $window = $(window);
                 var mapContainer = document.getElementById('map');
                 mapContainer.style.width = window.innerWidth+"px";
-                mapContainer.style.height =  window.innerHeight+"px"; 
+                container.style.height =  window.innerHeight+"px"; 
             }
             function displayMarker(locPosition, message) {
 
