@@ -186,7 +186,7 @@
             </div>
             <div class="category2">
                 <ul>                    
-                    <li id="bMenu" onclick="moveToCurrent()">
+                    <li id="aMenu" onclick="moveToCurrent()">
                         <span class="ico_comm ico_current"></span>
                         현재
                     </li>
@@ -414,6 +414,7 @@
             }
             */
             function moveToCurrent() {
+                aMenu.className = 'menu_selected';
                 if (navigator.geolocation) {
                     
                     // GeoLocation을 이용해서 접속 위치를 얻어옵니다
