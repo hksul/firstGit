@@ -21,7 +21,9 @@ h1 span:nth-child(1){
 }
 #dm1 {
     text-align: : left;
+    
 }
+
 #dm2 {
     text-align: : right;
 }
@@ -41,7 +43,9 @@ body, html {height: 100%;}
     background-color:#fff;
     border-radius: 5px;
 }
- 
+.dropdown-menu{
+    font-size:16px;;
+}
 /*
 
 width:40px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;border-radius: 5px;border:1px;}
