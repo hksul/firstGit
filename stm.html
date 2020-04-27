@@ -728,6 +728,8 @@
                 
                 infowindow.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
                 infowindow.open(map, markerX);
+                map.setLevel(4)
+                map.setCenter(new kakao.maps.LatLng(y, x));   
 
                 //customOverlay.setMap(map);
                 //customOverlay.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
