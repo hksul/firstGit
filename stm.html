@@ -728,7 +728,7 @@
             kakao.maps.event.addListener(markerX, 'click', function() {
                 // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
                 
-                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
+                infowindow.setContent('<div style="padding:5px;font-size:15px;">' + title + '</div>');
                 infowindow.open(map, markerX);
                 //map.setLevel(4)
                 map.panTo(new kakao.maps.LatLng(y, x));   
