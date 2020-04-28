@@ -690,13 +690,13 @@
                     regions.splice(idx, 1);
                     checkboxValues[val] = false;
                     if (type2) {
-                        setTimeout(function () {$inp.prop('checked', false);}, 0);
+                        setTimeout(function () {type2.prop('checked', false);}, 0);
                     }
                 } else {
                     regions.push(val);
                     checkboxValues[val] = true;
                     if (type2) {
-                        setTimeout(function () {$inp.prop('checked', true);}, 0);
+                        setTimeout(function () {type2.prop('checked', true);}, 0);
                     }
                 }
                 localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
@@ -706,12 +706,12 @@
                 if ((idx = types.indexOf(val)) > -1) {
                     types.splice(idx, 1);
                     if (type2) {
-                        setTimeout(function () {$inp.prop('checked', false);}, 0);
+                        setTimeout(function () {type2.prop('checked', false);}, 0);
                     }
                 } else {
                     types.push(val);
                     if (type2) {
-                        setTimeout(function () {$inp.prop('checked', true);}, 0);
+                        setTimeout(function () {type2.prop('checked', true);}, 0);
                     }
                     
                 }
@@ -786,7 +786,7 @@
 
         
             
-            processDropdownClick(val, true);
+            processDropdownClick(val, $inp);
             $(event.target).blur();
             
             /*
