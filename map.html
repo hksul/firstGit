@@ -314,8 +314,6 @@
                 new kakao.maps.Size(27, 34),
                 {
                     offset: new kakao.maps.Point(20, 34),
-                    //alt: ""
-                    //,
                     spriteOrigin:new kakao.maps.Point(5, 27),
                     spriteSize: new kakao.maps.Size(36, 164)
                 }
@@ -325,9 +323,34 @@
                 new kakao.maps.Size(27, 34),
                 {
                     offset: new kakao.maps.Point(20, 64),
-                    //alt: ""
-                    //,
-                    spriteOrigin:new kakao.maps.Point(5, 27),
+                    spriteOrigin:new kakao.maps.Point(5, 57),
+                    spriteSize: new kakao.maps.Size(36, 164)
+                }
+            );
+            var icon3 = new kakao.maps.MarkerImage(
+                'img/category7.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 87),
+                    spriteSize: new kakao.maps.Size(36, 164)
+                }
+            );
+            var icon4 = new kakao.maps.MarkerImage(
+                'img/category7.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 107),
+                    spriteSize: new kakao.maps.Size(36, 164)
+                }
+            );
+            var icon5 = new kakao.maps.MarkerImage(
+                'img/category7.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 137),
                     spriteSize: new kakao.maps.Size(36, 164)
                 }
             );
@@ -760,6 +783,30 @@
                     zIndex:2,
                     image: icon2
                 });
+            } else if (k2 == 'food') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon3
+                });
+            } else if (k2 == 'bread') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon4
+                });
+            } else if (k2 == 'other') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon5
+                });
+
+
+
 
             } else{ 
                 var markerX = new kakao.maps.Marker({
