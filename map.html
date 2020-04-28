@@ -274,12 +274,11 @@
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
-            $(function(){
-                $("#dmx").click( function() {
-                    $("#dm1 input[type='checkbox'].child").attr( "checked", $(this).attr("checked" ) );
-                });
-            });
+            
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+            $.each(checkboxValues, function(key, value) {
+                $("#" + key).prop('checked', value);
+            });
             /*
             var $checkboxes = $("#dm1 :checkbox");
 
@@ -691,13 +690,20 @@
             val = $target.attr('data-value'),
             $inp = $target.find('input'),
             idx;
+
+        
+            
+            
+            localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
         
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
                     regions.splice(idx, 1);
+                    checkboxValues[val] = true;
                     setTimeout(function () {$inp.prop('checked', false);}, 0);
                 } else {
                     regions.push(val);
+                    checkboxValues[val] = false;
                     setTimeout(function () {$inp.prop('checked', true);}, 0);
                 }
             }
