@@ -774,7 +774,10 @@
             var elm = document.getElementById(key);
             if (value != elm.checked) {
                 elm.click();
-                processDropdownClick(value, false);
+                
+            }
+            if (value){
+                processDropdownClick(key, false);
             }
         });
         $('.dropdown-menu a').on('click', function (event) {
