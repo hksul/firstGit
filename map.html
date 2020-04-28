@@ -320,7 +320,17 @@
                     spriteSize: new kakao.maps.Size(36, 164)
                 }
             );
- 
+            var icon2 = new kakao.maps.MarkerImage(
+                'img/category7.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    offset: new kakao.maps.Point(20, 64),
+                    //alt: ""
+                    //,
+                    spriteOrigin:new kakao.maps.Point(5, 27),
+                    spriteSize: new kakao.maps.Size(36, 164)
+                }
+            );
 
             var container = document.getElementById('map');
             var options = {
@@ -743,6 +753,14 @@
                     image: icon1
                 });
  
+            } if (k2 == 'coffee') {
+
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon2
+                });
+
             } else{ 
                 var markerX = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(y, x),
