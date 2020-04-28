@@ -278,6 +278,7 @@
                 alert("The checkbox with the ID '" + this.id + "' changed");
             });
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+            /*
             var $checkboxes = $("#dm1 :checkbox");
 
             $checkboxes.on("change", function(){
@@ -289,6 +290,7 @@
             $.each(checkboxValues, function(key, value) {
                 $("#" + key).prop('checked', value);
             });
+            */
             /*
             var geocoder = new kakao.maps.services.Geocoder();
 
