@@ -276,9 +276,11 @@
         <script>
             
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+            /*
             $.each(checkboxValues, function(key, value) {
                 $("#" + key).prop('checked', value);
             });
+            */
             /*
             var $checkboxes = $("#dm1 :checkbox");
 
@@ -694,7 +696,7 @@
         
             
             
-            localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+            
         
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
@@ -706,6 +708,7 @@
                     checkboxValues[val] = false;
                     setTimeout(function () {$inp.prop('checked', true);}, 0);
                 }
+                localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
             }
         
             if ((idx = typeList.indexOf(val)) > -1) {
