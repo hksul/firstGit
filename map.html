@@ -274,11 +274,11 @@
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
-            $("#dmx :checkbox").on("change", function(){
+            $("#dm1 :checkbox").on("change", function(){
                 alert("The checkbox with the ID '" + this.id + "' changed");
             });
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
-            var $checkboxes = $("#dmx :checkbox");
+            var $checkboxes = $("#dm1 :checkbox");
 
             $checkboxes.on("change", function(){
                 $checkboxes.each(function(){
