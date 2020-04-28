@@ -276,6 +276,9 @@
         <script>
             
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+            Object.keys(checkboxValues).forEach(function(key, value) {
+                $("#" + key).prop('checked', value);
+            });
             /*
             $.each(checkboxValues, function(key, value) {
                 $("#" + key).prop('checked', value);
