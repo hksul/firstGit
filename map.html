@@ -684,16 +684,20 @@
         });
         var clickedOverlay = null;
         */
-        function processDropdownClick(val) {
+        function processDropdownClick(val, type2) {
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
                     regions.splice(idx, 1);
                     checkboxValues[val] = false;
-                    setTimeout(function () {$inp.prop('checked', false);}, 0);
+                    if (type2) {
+                        setTimeout(function () {$inp.prop('checked', false);}, 0);
+                    }
                 } else {
                     regions.push(val);
                     checkboxValues[val] = true;
-                    setTimeout(function () {$inp.prop('checked', true);}, 0);
+                    if (type2) {
+                        setTimeout(function () {$inp.prop('checked', true);}, 0);
+                    }
                 }
                 localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
             }
@@ -701,11 +705,14 @@
             if ((idx = typeList.indexOf(val)) > -1) {
                 if ((idx = types.indexOf(val)) > -1) {
                     types.splice(idx, 1);
-
-                    setTimeout(function () {$inp.prop('checked', false);}, 0);
+                    if (type2) {
+                        setTimeout(function () {$inp.prop('checked', false);}, 0);
+                    }
                 } else {
                     types.push(val);
-                    setTimeout(function () {$inp.prop('checked', true);}, 0);
+                    if (type2) {
+                        setTimeout(function () {$inp.prop('checked', true);}, 0);
+                    }
                     
                 }
             }
@@ -767,7 +774,7 @@
             var elm = document.getElementById(key);
             if (value != elm.checked) {
                 elm.click();
-                processDropdownClick(value);
+                processDropdownClick(value, false);
             }
         });
         $('.dropdown-menu a').on('click', function (event) {
@@ -779,7 +786,7 @@
 
         
             
-            processDropdownClick(val);
+            processDropdownClick(val, true);
             $(event.target).blur();
             
             /*
