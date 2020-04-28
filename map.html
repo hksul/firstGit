@@ -274,8 +274,10 @@
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
-            $('#dm1').on('change', 'input[type=checkbox]', function(event) {
-                alert("The checkbox with the ID '" + this.id + "' changed");
+            $(function(){
+                $("#dmx").click( function() {
+                    $("#dm1 input[type='checkbox'].child").attr( "checked", $(this).attr("checked" ) );
+                });
             });
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
             /*
