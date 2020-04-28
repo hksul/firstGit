@@ -277,7 +277,11 @@
             
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
             Object.keys(checkboxValues).forEach(function(key, value) {
-                $("#" + key).prop('checked', value);
+                console.log(key, value)
+                var elm = document.getElementById(key);
+                if (value != elm.checked) {
+                    elm.click();
+                }
             });
             /*
             $.each(checkboxValues, function(key, value) {
