@@ -710,7 +710,7 @@
                 }
             }
 
-            $(event.target).blur();
+            //$(event.target).blur();
 
             if (optionList.indexOf(val) >= 0) {
                 if ((idx = regions.indexOf(val)) > -1) {
@@ -780,6 +780,7 @@
         
             
             processDropdownClick(val);
+            $(event.target).blur();
             
             /*
             if ((idx = optionList.indexOf(val)) > -1) {
