@@ -274,7 +274,9 @@
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
-            
+            $('#dmx').on('change', 'input[type=checkbox]', function(event) {
+                alert("The checkbox with the ID '" + this.id + "' changed");
+            });
             var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
             var $checkboxes = $("#dm1 :checkbox");
 
@@ -657,11 +659,11 @@
     -->
     
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js'></script>
-  
+    <!--  
     <script src='js/data.js'></script>
+    -->
     <script src='js/data.json'></script>
     <script id="rendered-js">
         var regions = [];
