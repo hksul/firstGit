@@ -281,6 +281,7 @@
                 var elm = document.getElementById(key);
                 if (value != elm.checked) {
                     elm.click();
+                    processDropdownClick(value)
                 }
             });
             /*
@@ -691,20 +692,7 @@
         });
         var clickedOverlay = null;
         */
-
-
-        $('.dropdown-menu a').on('click', function (event) {
-        
-            var $target = $(event.currentTarget),
-            val = $target.attr('data-value'),
-            $inp = $target.find('input'),
-            idx;
-
-        
-            
-            
-            
-        
+        function processDropdownClick(val) {
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
                     regions.splice(idx, 1);
@@ -780,7 +768,96 @@
                     }
                 }
             }
+        }
+
+        $('.dropdown-menu a').on('click', function (event) {
+        
+            var $target = $(event.currentTarget),
+            val = $target.attr('data-value'),
+            $inp = $target.find('input'),
+            idx;
+
+        
             
+            processDropdownClick(val);
+            
+            /*
+            if ((idx = optionList.indexOf(val)) > -1) {
+                if ((idx = regions.indexOf(val)) > -1) {
+                    regions.splice(idx, 1);
+                    checkboxValues[val] = false;
+                    setTimeout(function () {$inp.prop('checked', false);}, 0);
+                } else {
+                    regions.push(val);
+                    checkboxValues[val] = true;
+                    setTimeout(function () {$inp.prop('checked', true);}, 0);
+                }
+                localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+            }
+        
+            if ((idx = typeList.indexOf(val)) > -1) {
+                if ((idx = types.indexOf(val)) > -1) {
+                    types.splice(idx, 1);
+
+                    setTimeout(function () {$inp.prop('checked', false);}, 0);
+                } else {
+                    types.push(val);
+                    setTimeout(function () {$inp.prop('checked', true);}, 0);
+                    
+                }
+            }
+
+            $(event.target).blur();
+
+            if (optionList.indexOf(val) >= 0) {
+                if ((idx = regions.indexOf(val)) > -1) {
+                    console.log("clicking drop1", val);
+                    Object.keys(dataPositions2[val]).forEach(function(key) {
+                        for (var j = 0; j < dataPositions2[val][key].length; j ++) {
+                    
+                            addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng, dataPositions2[val][key][j].title);
+                        }
+                        console.log("adding  marker ", val, key);
+                        setMarkers(val, key, map) ;                            
+                    });
+                    
+                } else {
+                    console.log("unclicking drop1", val);
+                    Object.keys(dataPositions2[val]).forEach(function(key) {
+                        setMarkers(val, key, null) ;
+                        console.log("deleting marker ", val, key);
+                    });
+                };
+            } else if (typeList.indexOf(val) >= 0){
+
+                if ((idx = types.indexOf(val)) > -1) {
+                    console.log("clicking drop2", val);
+                    for (var i = 0; i < regions.length; i++) {
+                        for (var j = 0; j < dataPositions2[regions[i]][val].length; j++) {
+                             addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng, dataPositions2[regions[i]][val][j].title);
+                            //Do something
+                        }
+                        setMarkers(regions[i], val, map) ;      
+                        console.log("adding marker ", regions[i], val); 
+                    }
+                }
+                else {
+                    console.log("unclicking drop2", val);
+                    for (var i = 0; i < regions.length; i++) {
+                        
+                        //for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
+                            //addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                            //setMarkers(val, key, null) ;       
+                            //Do something
+                        //}
+                        
+                        setMarkers(regions[i], val, null) ;     
+
+                        console.log("deleting marker ", regions[i], val);
+                    }
+                }
+            }
+            */
             
         
             console.log(regions);
