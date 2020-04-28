@@ -275,15 +275,7 @@
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
             
-            var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
-            Object.keys(checkboxValues).forEach(function(key, value) {
-                console.log(key, value)
-                var elm = document.getElementById(key);
-                if (value != elm.checked) {
-                    elm.click();
-                    processDropdownClick(value);
-                }
-            });
+            
             /*
             $.each(checkboxValues, function(key, value) {
                 $("#" + key).prop('checked', value);
@@ -769,7 +761,15 @@
                 }
             }
         }
-
+        var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+        Object.keys(checkboxValues).forEach(function(key, value) {
+            console.log(key, value)
+            var elm = document.getElementById(key);
+            if (value != elm.checked) {
+                elm.click();
+                processDropdownClick(value);
+            }
+        });
         $('.dropdown-menu a').on('click', function (event) {
         
             var $target = $(event.currentTarget),
