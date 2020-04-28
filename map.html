@@ -341,7 +341,7 @@
                 new kakao.maps.Size(27, 34),
                 {
                     offset: new kakao.maps.Point(20, 64),
-                    spriteOrigin:new kakao.maps.Point(5, 107),
+                    spriteOrigin:new kakao.maps.Point(5, 0),
                     spriteSize: new kakao.maps.Size(36, 164)
                 }
             );
@@ -781,7 +781,7 @@
                 var markerX = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(y, x),
                     zIndex:2,
-                    image: icon2
+                    image: icon4
                 });
             } else if (k2 == 'food') {   
  
@@ -795,14 +795,14 @@
                 var markerX = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(y, x),
                     zIndex:2,
-                    image: icon4
+                    image:   icon5
                 });
             } else if (k2 == 'other') {   
  
                 var markerX = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(y, x),
                     zIndex:2,
-                    image: icon5
+                    image:   icon2
                 });
 
 
