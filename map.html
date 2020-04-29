@@ -699,7 +699,7 @@
                         setTimeout(function () {type2.prop('checked', true);}, 0);
                     }
                 }
-                localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+                
             }
         
             if ((idx = typeList.indexOf(val)) > -1) {
@@ -767,6 +767,7 @@
                     }
                 }
             }
+            localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
         }
         var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
         Object.keys(checkboxValues).forEach(function(key, value) {
