@@ -775,6 +775,7 @@
             console.log('checkboxValues', checkboxValues)
         }
         var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+        console.log('checkboxValues 0 ', checkboxValues)
         // Loads Saved Data
         Object.keys(checkboxValues).forEach(function(key, value) {
             console.log(key, value)
