@@ -778,12 +778,14 @@
         console.log('checkboxValues 0 ', checkboxValues)
         // Loads Saved Data
         Object.keys(checkboxValues).forEach(function(key, value) {
-            console.log(key, value)
+            
             var elm = document.getElementById(key);
+            console.log(key, value, elm.checked)
             if (value != elm.checked) {
                 elm.click();
                 
             }
+            console.log(key, value, elm.checked)
             if (elm.checked){
                 processDropdownClick(key, false);
             }
