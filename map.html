@@ -687,6 +687,8 @@
 
         // Set checkboxValues, regions/types, and adds/deletes Markers.
         function processDropdownClick(val, type2) {
+            console.log('in processDropdownClick')
+            console.log('checkboxValues', checkboxValues)
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
                     regions.splice(idx, 1);
@@ -770,6 +772,7 @@
                 }
             }
             localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+            console.log('checkboxValues', checkboxValues)
         }
         var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
         // Loads Saved Data
