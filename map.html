@@ -781,7 +781,7 @@
             
             var elm = document.getElementById(key);
             console.log(key, value, elm.checked)
-            if (value != elm.checked) {
+            if (checkboxValues[key] != elm.checked) {
                 elm.click();
                 
             }
