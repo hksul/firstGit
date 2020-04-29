@@ -684,6 +684,8 @@
         });
         var clickedOverlay = null;
         */
+
+        // Set checkboxValues, regions/types, and adds/deletes Markers.
         function processDropdownClick(val, type2) {
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
@@ -727,7 +729,7 @@
                     
                             addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng, dataPositions2[val][key][j].title);
                         }
-                        console.log("adding  marker ", val, key);
+                        //console.log("adding  marker ", val, key);
                         setMarkers(val, key, map) ;                            
                     });
                     
@@ -735,7 +737,7 @@
                     console.log("unclicking drop1", val);
                     Object.keys(dataPositions2[val]).forEach(function(key) {
                         setMarkers(val, key, null) ;
-                        console.log("deleting marker ", val, key);
+                        //console.log("deleting marker ", val, key);
                     });
                 };
             } else if (typeList.indexOf(val) >= 0){
@@ -748,7 +750,7 @@
                             //Do something
                         }
                         setMarkers(regions[i], val, map) ;      
-                        console.log("adding marker ", regions[i], val); 
+                        //console.log("adding marker ", regions[i], val); 
                     }
                 }
                 else {
@@ -763,13 +765,14 @@
                         */
                         setMarkers(regions[i], val, null) ;     
 
-                        console.log("deleting marker ", regions[i], val);
+                        //console.log("deleting marker ", regions[i], val);
                     }
                 }
             }
             localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
         }
         var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+        // Loads Saved Data
         Object.keys(checkboxValues).forEach(function(key, value) {
             console.log(key, value)
             var elm = document.getElementById(key);
