@@ -41,13 +41,13 @@
         .category .menu_selected {background:#339cf1;color:#fff;  } 
         .category li{list-style:none;float:left;width:44px;height:48px;padding-top:5px;cursor:pointer;} 
         .category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://hkhomepage.netlify.app/img/category7.png') no-repeat;} 
-        .category .ico_coffee {background:url('https://hkhomepage.netlify.app/img/places_category_BROWN.png') no-repeat; background-position:-10px 0;}     
-        .category .ico_store {background:url('https://hkhomepage.netlify.app/img/places_category_GREEN.png') no-repeat; background-position:-10px -36px;}  
+        .category .ico_coffee {background:url('https://hkhomepage.netlify.app/img/places_category_BROWN.png') no-repeat; background-position:-10px -144px;}     
+        .category .ico_store {background:url('https://hkhomepage.netlify.app/img/places_category_GREEN.png') no-repeat; background-position:-10px -180px;}  
         .category .ico_carpark {background:url('https://hkhomepage.netlify.app/img/category7.png') no-repeat; background-position:-10px -102px;} 
         .category .ico_bread {background:url('https://hkhomepage.netlify.app/img/category7.png') no-repeat; background-position:-10px -138px;} 
         .category .ico_hospital {background:url('https://hkhomepage.netlify.app/img/places_category.png') no-repeat; background-position:-10px -72px;} 
         .category .ico_mart {background:url('https://hkhomepage.netlify.app/img/places_category2.png') no-repeat; background-position:-10px -36px;} 
-        .category .ico_other {background-position:-10px -72px;} 
+        .category .ico_other {background:url('https://hkhomepage.netlify.app/img/places_category_GREY.png') no-repeat; background-position:-10px -108px;} 
         .category .ico_current {background:url('https://hkhomepage.netlify.app/img/category4.png'); background-position:-10px -144px;}  
         .custom_zoomcontrol2 {position:absolute;top:60px;right:8px;width:36px;height:34px;overflow:hidden;z-index:1;background-color:#fff;} 
         .custom_zoomcontrol2 span {display:block;width:34px;height:40px;text-align:center;cursor:pointer;line-height: 36px;}     
@@ -342,11 +342,11 @@
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
 
             var icon1 = new kakao.maps.MarkerImage(
-                'img/category7.png',
+                'img/places_category_GREEN.png',
                 new kakao.maps.Size(27, 34),
                 {
                     //offset: new kakao.maps.Point(20, 34),
-                    spriteOrigin:new kakao.maps.Point(5, 28),
+                    spriteOrigin:new kakao.maps.Point(10, 180),
                     spriteSize: new kakao.maps.Size(36, 164)
                 }
             );
