@@ -7,7 +7,7 @@
     <!--<meta name="apple-mobile-web-app-title" content="CodePen width=device-width, initial-scale=1.0" >-->
     <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
     <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-    <title>Document</title>
+    <title>ZeroPay MAP - 제로페이 맵</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -17,7 +17,7 @@
     </script>
     <script>
         if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
+            window.parent.postMessage("resize", "*"); 
         }
     </script>
     <style>
@@ -35,26 +35,30 @@
         */
         /*#mapwrap{position:relative;overflow:hidden;}*/
         .category, .category *{margin:0;padding:0;color:#000;}   
-        .category {position:absolute;overflow:hidden;top:10px;left:10px;width:250px;height:52px;z-index:5;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:11px;text-align:center;background-color:#fff;border-radius: 5px;}
+        .category {position:absolute;overflow:hidden;top:10px;left:10px;width:280px;height:52px;z-index:5;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:11px;text-align:center;background-color:#fff;border-radius: 5px;}
         .category2 {position:absolute;overflow:hidden;top:10px;right:10px;width:40px;height:38px;z-index:20;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
         .category3 {position:absolute;overflow:visible;top:10px;right:10px;width:40px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;border-radius: 5px;border:0px;}
         .category .menu_selected {background:#339cf1;color:#fff;  } 
-        .category li{list-style:none;float:left;width:50px;height:48px;padding-top:5px;cursor:pointer;} 
-        .category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('https://hkhomepage.netlify.app/img/category4.png') no-repeat;} 
-        .category .ico_coffee {background-position:-10px 0;}     
-        .category .ico_store {background-position:-10px -36px;}  
-        .category .ico_carpark {background:url('https://hkhomepage.netlify.app/img/category6.png') no-repeat; background-position:-10px -102px;} 
-        .category .ico_bread {background:url('https://hkhomepage.netlify.app/img/category6.png') no-repeat; background-position:-10px -138px;} 
-        .category .ico_other {background-position:-10px -72px;} 
-        .category .ico_current {background:url('https://hkhomepage.netlify.app/img/category4.png'); background-position:-10px -144px;}  
+        .category li{list-style:none;float:left;width:40px;height:48px;padding-top:5px;cursor:pointer;} 
+        .category .ico_comm {display:block;margin:0 auto 2px;width:22px;height:26px;background:url('img/category7.png') no-repeat;} 
+        .category .ico_coffee {background:url('img/places_category_BROWN.png') no-repeat; background-position:-10px -144px;}     
+        .category .ico_store {background:url('img/places_category_GREEN.png') no-repeat; background-position:-10px -180px;}  
+        .category .ico_carpark {background:url('img/category7.png') no-repeat; background-position:-10px -102px;} 
+        .category .ico_bread {background:url('img/category7_YELLOW.png') no-repeat; background-position:-10px -138px;} 
+        .category .ico_hospital {background:url('img/places_category.png') no-repeat; background-position:-10px -72px;} 
+        .category .ico_mart {background:url('img/places_category2.png') no-repeat; background-position:-10px -36px;} 
+        .category .ico_other {background:url('img/places_category_GREY.png') no-repeat; background-position:-10px -108px;} 
+        .category .ico_current {background:url('img/category4.png'); background-position:-10px -144px;}  
         .custom_zoomcontrol2 {position:absolute;top:60px;right:8px;width:36px;height:34px;overflow:hidden;z-index:1;background-color:#fff;} 
         .custom_zoomcontrol2 span {display:block;width:34px;height:40px;text-align:center;cursor:pointer;line-height: 36px;}     
         
-        .custom_zoomcontrol {position:absolute;bottom:15px;right:10px;width:78px;height:36px;overflow:hidden;z-index:1;background-color:#fff;border-radius: 5px;border:0px} 
+        .custom_zoomcontrol {position:absolute;bottom:10px;right:10px;width:78px;height:36px;overflow:hidden;z-index:1;background-color:#fff;border-radius: 5px;border:0px} 
         .custom_zoomcontrol span {display:block;width:75px;height:26px;text-align:center;cursor:pointer;line-height: 38px;}     
         .custom_zoomcontrol span img {width:58px;height:24px;padding:2px 1px;border:none;}             
         .custom_zoomcontrol span:first-child{border-bottom:0px solid #bfbfbf;}            
     </style>
+    <link rel="shortcut icon"     type="image/x-icon"     href="favicon2.ico" />
+    <link rel="icon"     type="image/x-icon"     href="favicon2.ico" />
     <script data-ad-client="ca-pub-3423763568069065" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body translate="no">
@@ -137,6 +141,7 @@
                         <li><a href="#" class="small" data-value="coffee" tabIndex="-1"><input type="checkbox" checked/>&nbsp;커피</a></li>
                         <li><a href="#" class="small" data-value="bread" tabIndex="-1"><input type="checkbox" checked/>&nbsp;빵집</a></li>
                         <li><a href="#" class="small" data-value="other" tabIndex="-1"><input type="checkbox" checked/>&nbsp;주유소 등</a></li>                    
+                        <li><a href="#" class="small" data-value="hospital" tabIndex="-1"><input type="checkbox" checked/>&nbsp;주유소 등</a></li>      
                     </ul>
                 </div>
             </div>
@@ -181,7 +186,15 @@
                     </li>
                     <li id="otherMenu" onclick="changeMarker('other')">
                         <span class="ico_comm ico_other  "></span>
-                        <div style="font-size:11px;">주유/주차</div>
+                        <div style="font-size:10px;">주유/차</div>
+                    </li>
+                    <li id="hospitalMenu" onclick="changeMarker('hospital')">
+                        <span class="ico_comm ico_hospital  "></span>
+                        <div style="font-size:10px;">병원/약</div>
+                    </li>
+                    <li id="martMenu" onclick="changeMarker('mart')">
+                        <span class="ico_comm ico_mart  "></span>
+                        <div style="font-size:10px;">마트</div>
                     </li>
                     <!--
                     <li id="aMenu" onclick="moveToCurrent()">
@@ -236,42 +249,62 @@
                 
             </div>-->
             
-            <div class="button-group  shadow mb-50">
+            <div class="button-group  shadow mb-50" id = "dmx">
                 <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-cog"></span> 
-                    
-                    설정
+                    <span class="glyphicon glyphicon-cog"></span>                    
+                    <!--설정-->
                 </button>
                 <ul id = "dm1" class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#" class="small" data-value="gangdong" tabIndex="-1"><input type="checkbox"/>&nbsp;강동구</a></li>
-                    <li><a href="#" class="small" data-value="kangbook" tabIndex="-1"><input type="checkbox"/>&nbsp;강북구</a></li>
-                    <li><a href="#" class="small" data-value="gangseo" tabIndex="-1"><input type="checkbox"/>&nbsp;강서구</a></li>
-                    <li><a href="#" class="small" data-value="kwanak" tabIndex="-1"><input type="checkbox"/>&nbsp;관악구</a></li>
-                    <li><a href="#" class="small" data-value="kwangjin" tabIndex="-1"><input type="checkbox"/>&nbsp;광진구</a></li>
-                    <li><a href="#" class="small" data-value="geumcheon" tabIndex="-1"><input type="checkbox"/>&nbsp;금천구</a></li>
-                    <li><a href="#" class="small" data-value="guro" tabIndex="-1"><input type="checkbox"/>&nbsp;구로구</a></li>
-                    <li><a href="#" class="small" data-value="nowon" tabIndex="-1"><input type="checkbox"/>&nbsp;노원구</a></li>
-                    <li><a href="#" class="small" data-value="dobong" tabIndex="-1"><input type="checkbox"/>&nbsp;도봉구</a></li>
-                    <li><a href="#" class="small" data-value="dongdaemoon" tabIndex="-1"><input type="checkbox"/>&nbsp;동대문구</a></li>
-                    <li><a href="#" class="small" data-value="dongjak" tabIndex="-1"><input type="checkbox"/>&nbsp;동작구</a></li>
-                    <li><a href="#" class="small" data-value="mapo" tabIndex="-1"><input type="checkbox"/>&nbsp;마포구</a></li>
-                    <li><a href="#" class="small" data-value="seodaemoon" tabIndex="-1"><input type="checkbox"/>&nbsp;서대문구</a></li>
-                    <li><a href="#" class="small" data-value="seocho" tabIndex="-1"><input type="checkbox"/>&nbsp;서초구</a></li>
-                    <li><a href="#" class="small" data-value="songpa" tabIndex="-1"><input type="checkbox"/>&nbsp;송파구</a></li>
-                    <li><a href="#" class="small" data-value="sungdong" tabIndex="-1"><input type="checkbox"/>&nbsp;성동구</a></li>
-                    <li><a href="#" class="small" data-value="sungbook" tabIndex="-1"><input type="checkbox"/>&nbsp;성북구</a></li>
-                    <li><a href="#" class="small" data-value="yangcheon" tabIndex="-1"><input type="checkbox"/>&nbsp;양천구</a></li>
-                    <li><a href="#" class="small" data-value="yungdeungpo" tabIndex="-1"><input type="checkbox"/>&nbsp;영등포구</a></li>
-                    <li><a href="#" class="small" data-value="yongsan" tabIndex="-1"><input type="checkbox"/>&nbsp;용산구</a></li>
-                    <li><a href="#" class="small" data-value="eunpyoung" tabIndex="-1"><input type="checkbox"/>&nbsp;은평구</a></li>
-                    <li><a href="#" class="small" data-value="jongro" tabIndex="-1"><input type="checkbox"/>&nbsp;종로구</a></li>
-                    <li><a href="#" class="small" data-value="joonggu" tabIndex="-1"><input type="checkbox"/>&nbsp;중구</a></li>
+                    <li><a href="#" class="small" data-value="gangnam" tabIndex="-1"> <input type="checkbox" id = "gangnam""/>&nbsp;강남구</a></li>
+                    <li><a href="#" class="small" data-value="gangdong" tabIndex="-1"><input type="checkbox" id = "gangdong"/>&nbsp;강동구</a></li>
+                    <li><a href="#" class="small" data-value="kangbook" tabIndex="-1"><input type="checkbox" id = "kangbook"/>&nbsp;강북구</a></li>
+                    <li><a href="#" class="small" data-value="gangseo" tabIndex="-1"><input type="checkbox" id = "gangseo"/>&nbsp;강서구</a></li>
+                    <li><a href="#" class="small" data-value="kwanak" tabIndex="-1"><input type="checkbox" id = "kwanak"/>&nbsp;관악구</a></li>
+                    <li><a href="#" class="small" data-value="kwangjin" tabIndex="-1"><input type="checkbox" id = "kwangjin"/>&nbsp;광진구</a></li>
+                    <li><a href="#" class="small" data-value="geumcheon" tabIndex="-1"><input type="checkbox" id = "geumcheon"/>&nbsp;금천구</a></li>
+                    <li><a href="#" class="small" data-value="guro" tabIndex="-1"><input type="checkbox" id = "guro"/>&nbsp;구로구</a></li>
+                    <li><a href="#" class="small" data-value="nowon" tabIndex="-1"><input type="checkbox" id = "nowon"/>&nbsp;노원구</a></li>
+                    <li><a href="#" class="small" data-value="dobong" tabIndex="-1"><input type="checkbox" id = "dobong"/>&nbsp;도봉구</a></li>
+                    <li><a href="#" class="small" data-value="dongdaemoon" tabIndex="-1"><input type="checkbox" id = "dongdaemoon"/>&nbsp;동대문구</a></li>
+                    <li><a href="#" class="small" data-value="dongjak" tabIndex="-1"><input type="checkbox" id = "dongjak"/>&nbsp;동작구</a></li>
+                    <li><a href="#" class="small" data-value="mapo" tabIndex="-1"><input type="checkbox" id = "mapo"/>&nbsp;마포구</a></li>
+                    <li><a href="#" class="small" data-value="seodaemoon" tabIndex="-1"><input type="checkbox" id = "seodaemoon"/>&nbsp;서대문구</a></li>
+                    <li><a href="#" class="small" data-value="seocho" tabIndex="-1"><input type="checkbox" id = "seocho"/>&nbsp;서초구</a></li>
+                    <li><a href="#" class="small" data-value="songpa" tabIndex="-1"><input type="checkbox" id = "songpa"/>&nbsp;송파구</a></li>
+                    <li><a href="#" class="small" data-value="sungdong" tabIndex="-1"><input type="checkbox" id = "sungdong"/>&nbsp;성동구</a></li>
+                    <li><a href="#" class="small" data-value="sungbook" tabIndex="-1"><input type="checkbox" id = "sungbook"/>&nbsp;성북구</a></li>
+                    <li><a href="#" class="small" data-value="yangcheon" tabIndex="-1"><input type="checkbox" id = "yangcheon"/>&nbsp;양천구</a></li>
+                    <li><a href="#" class="small" data-value="yungdeungpo" tabIndex="-1"><input type="checkbox" id = "yungdeungpo"/>&nbsp;영등포구</a></li>
+                    <li><a href="#" class="small" data-value="yongsan" tabIndex="-1"><input type="checkbox" id = "yongsan"/>&nbsp;용산구</a></li>
+                    <li><a href="#" class="small" data-value="eunpyoung" tabIndex="-1"><input type="checkbox" id = "eunpyoung"/>&nbsp;은평구</a></li>
+                    <li><a href="#" class="small" data-value="jongro" tabIndex="-1"><input type="checkbox" id = "jongro"/>&nbsp;종로구</a></li>
+                    <li><a href="#" class="small" data-value="joonggu" tabIndex="-1"><input type="checkbox" id = "joonggu"/>&nbsp;중구</a></li>
                 </ul>
             </div> 
 
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5162422d11ed424bcdaa4cf2ddefa2a"></script>
         <script>
+            
+            
+            /*
+            $.each(checkboxValues, function(key, value) {
+                $("#" + key).prop('checked', value);
+            });
+            */
+            /*
+            var $checkboxes = $("#dm1 :checkbox");
+
+            $checkboxes.on("change", function(){
+                $checkboxes.each(function(){
+                    checkboxValues[this.id] = this.checked;
+                });
+                localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+            });
+            $.each(checkboxValues, function(key, value) {
+                $("#" + key).prop('checked', value);
+            });
+            */
             /*
             var geocoder = new kakao.maps.services.Geocoder();
 
@@ -306,7 +339,72 @@
                 imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
                 imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
- 
+
+            var icon1 = new kakao.maps.MarkerImage(
+                'img/places_category_GREEN.png',
+                new kakao.maps.Size(22, 32),
+                {
+                    //offset: new kakao.maps.Point(20, 34),
+                    spriteOrigin:new kakao.maps.Point(10, 180),
+                    spriteSize: new kakao.maps.Size(72, 208)
+                }
+            );
+            var icon2 = new kakao.maps.MarkerImage(
+                'img/places_category_GREY.png',
+                new kakao.maps.Size(22, 32),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(10, 108),
+                    spriteSize: new kakao.maps.Size(72, 208)
+                }
+            );
+            var icon3 = new kakao.maps.MarkerImage(
+                'img/category7.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 102),
+                    spriteSize: new kakao.maps.Size(36, 164)
+                }
+            );
+            var icon4 = new kakao.maps.MarkerImage(
+                'img/places_category_BROWN.png',
+                new kakao.maps.Size(22, 32),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(10, 144),
+                    spriteSize: new kakao.maps.Size(72, 208)
+                }
+            );
+            var icon5 = new kakao.maps.MarkerImage(
+                'img/category7_YELLOW.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 138),
+                    spriteSize: new kakao.maps.Size(36, 164)
+                }
+            );
+
+            var icon6 = new kakao.maps.MarkerImage(
+                'img/places_category.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 68),
+                    spriteSize: new kakao.maps.Size(72, 208)
+                }
+            );
+
+            var icon7 = new kakao.maps.MarkerImage(
+                'img/places_category2.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 32),
+                    spriteSize: new kakao.maps.Size(72, 208)
+                }
+            );
 
             var container = document.getElementById('map');
             var options = {
@@ -316,8 +414,8 @@
             var markerImageSrc2 = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
             var map = new kakao.maps.Map(container, options);
             var markers = {};
-            var optionList = ['dongjak','sungdong','jongro','yongsan','joonggu' ,'dongdaemoon' ,'seocho' ,'mapo' ,'kwanak' ,'kwangjin' ,'songpa' ,'seodaemoon' ,'guro'  ,'nowon','dobong','gangseo','gangdong','sungbook','kangbook','yangcheon','eunpyoung','geumcheon','yungdeungpo']
-            var typeList = ['coffee', 'food', 'convenience', 'other', 'bread']
+            var optionList = ['dongjak','sungdong','jongro','yongsan','joonggu' ,'dongdaemoon' ,'seocho' ,'mapo' ,'kwanak' ,'kwangjin' ,'songpa' ,'seodaemoon' ,'guro'  ,'nowon','dobong','gangseo','gangdong','sungbook','kangbook','yangcheon','eunpyoung','geumcheon','yungdeungpo', 'gangnam']
+            var typeList = ['coffee', 'food', 'convenience', 'other', 'bread', 'hospital', 'mart']
             for (var i = 0; i < optionList.length; i++) {
                 markers[optionList[i]] = {}
                 for (var j = 0; j < typeList.length; j++) {
@@ -362,7 +460,7 @@
                 var marker = new kakao.maps.Marker({  
                     map: map, 
                     position: locPosition,
-                    image: markerImage ,
+                    //image: markerImage ,
                     zIndex: 3
                 });  
                 if (message !=  '') {
@@ -410,6 +508,8 @@
                 var carparkMenu = document.getElementById('carparkMenu');
                 var breadMenu = document.getElementById('breadMenu');
                 var otherMenu = document.getElementById('otherMenu');
+                var hospitalMenu = document.getElementById('hospitalMenu');
+                var martMenu = document.getElementById('martMenu');
                 
                 // 커피숍 카테고리가 클릭됐을 때
                 if (type === 'coffee') {
@@ -420,6 +520,8 @@
                     carparkMenu.className = '';
                     breadMenu.className = '';
                     otherMenu.className = '';
+                    hospitalMenu.className = '';
+                    martMenu.className = '';
                     
                     // 커피숍 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("coffee")
@@ -427,6 +529,8 @@
                     hideMarkerType("convenience")
                     hideMarkerType("bread")
                     hideMarkerType("other")
+                    hideMarkerType("hospital")
+                    hideMarkerType("mart")
                     
                 
                     
@@ -438,6 +542,8 @@
                     carparkMenu.className = '';
                     breadMenu.className = '';
                     otherMenu.className = '';
+                    hospitalMenu.className = '';
+                    martMenu.className = '';
                     
                     
                     // 편의점 마커들만 지도에 표시하도록 설정합니다
@@ -446,7 +552,9 @@
                     hideMarkerType("coffee")
                     hideMarkerType("bread")
                     hideMarkerType("other")
-                    
+                    hideMarkerType("hospital")
+                    hideMarkerType("mart")
+
                 } else if (type === 'food') { // 주차장 카테고리가 클릭됐을 때
                 
                     // 주차장 카테고리를 선택된 스타일로 변경하고
@@ -455,7 +563,8 @@
                     carparkMenu.className = 'menu_selected';
                     breadMenu.className = '';
                     otherMenu.className = '';
-                    
+                    hospitalMenu.className = '';
+                    martMenu.className = '';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("food")
@@ -463,6 +572,9 @@
                     hideMarkerType("coffee")
                     hideMarkerType("bread")
                     hideMarkerType("other")
+                    hideMarkerType("hospital")
+                    hideMarkerType("mart")
+
                 }    else if (type === 'bread') { // 주차장 카테고리가 클릭됐을 때
                     
                     // 주차장 카테고리를 선택된 스타일로 변경하고
@@ -471,7 +583,8 @@
                     carparkMenu.className ='';
                     breadMenu.className = 'menu_selected';
                     otherMenu.className = '';
-                    
+                    hospitalMenu.className = '';
+                    martMenu.className = '';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("bread")
@@ -479,6 +592,8 @@
                     hideMarkerType("coffee")
                     hideMarkerType("convenience")
                     hideMarkerType("other")
+                    hideMarkerType("hospital")
+                    hideMarkerType("mart")
                 }    else if (type === 'other') { // 주차장 카테고리가 클릭됐을 때
                     
                     // 주차장 카테고리를 선택된 스타일로 변경하고
@@ -487,7 +602,8 @@
                     carparkMenu.className ='';
                     breadMenu.className = '';
                     otherMenu.className = 'menu_selected';
-                    
+                    hospitalMenu.className = '';
+                    martMenu.className = '';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("other")
@@ -495,7 +611,48 @@
                     hideMarkerType("coffee")
                     hideMarkerType("bread")
                     hideMarkerType("convenience")
-                }    
+                    hideMarkerType("hospital")
+                    hideMarkerType("mart")
+
+                }    else if (type === 'hospital') { // 주차장 카테고리가 클릭됐을 때
+                    
+                    // 주차장 카테고리를 선택된 스타일로 변경하고
+                    coffeeMenu.className = '';
+                    storeMenu.className = '';
+                    carparkMenu.className ='';
+                    breadMenu.className = '';
+                    otherMenu.className = '';
+                    hospitalMenu.className = 'menu_selected';
+                    martMenu.className = '';
+                    
+                    // 주차장 마커들만 지도에 표시하도록 설정합니다
+                    showMarkerType("hospital")
+                    hideMarkerType("food")
+                    hideMarkerType("coffee")
+                    hideMarkerType("bread")
+                    hideMarkerType("convenience")
+                    hideMarkerType("other")
+                    hideMarkerType("mart")
+                }    else if (type === 'mart') { // 주차장 카테고리가 클릭됐을 때
+                    
+                    // 주차장 카테고리를 선택된 스타일로 변경하고
+                    coffeeMenu.className = '';
+                    storeMenu.className = '';
+                    carparkMenu.className ='';
+                    breadMenu.className = '';
+                    otherMenu.className = '';
+                    hospitalMenu.className = 'menu_selected';
+                    martMenu.className = '';
+                    
+                    // 주차장 마커들만 지도에 표시하도록 설정합니다
+                    showMarkerType("mart")
+                    hideMarkerType("food")
+                    hideMarkerType("coffee")
+                    hideMarkerType("bread")
+                    hideMarkerType("convenience")
+                    hideMarkerType("other")
+                    hideMarkerType("hospital")
+                }      
             } 
             /*
             function setMapType(maptype) { 
@@ -583,7 +740,7 @@
 
 
         </script>
-    </div>
+    </div> 
     <!--
     <form action="https://www.google.com/search" method="GET">
         //<input type="text">
@@ -597,14 +754,15 @@
     -->
     
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js'></script>
-  
+    <!--  
     <script src='js/data.js'></script>
-    <script src='js/data.json'></script>
+    -->
+    <script src='data4.json'></script>
     <script id="rendered-js">
         var regions = [];
-        var types = ['coffee', 'food', 'convenience', 'other', 'bread']
+        var types = ['coffee', 'food', 'convenience', 'other', 'bread', 'hospital', 'mart']
         var infowindow = new kakao.maps.InfoWindow({zIndex:4});
         /*
         var tmpPosition = new kakao.maps.LatLng(37.49887, 127.026581);  
@@ -617,22 +775,135 @@
         var clickedOverlay = null;
         */
 
+        // Set checkboxValues, regions/types, and adds/deletes Markers.
+        function processDropdownClick(val, type2) {
+            console.log('in processDropdownClick')
+            console.log('checkboxValues', checkboxValues)
+            if ((idx = optionList.indexOf(val)) > -1) {
+                if ((idx = regions.indexOf(val)) > -1) {
+                    regions.splice(idx, 1);
+                    checkboxValues[val] = false;
+                    if (type2) {
+                        setTimeout(function () {type2.prop('checked', false);}, 0);
+                    }
+                } else {
+                    regions.push(val);
+                    checkboxValues[val] = true;
+                    if (type2) {
+                        setTimeout(function () {type2.prop('checked', true);}, 0);
+                    }
+                }
+                
+            }
+        
+            if ((idx = typeList.indexOf(val)) > -1) {
+                if ((idx = types.indexOf(val)) > -1) {
+                    types.splice(idx, 1);
+                    if (type2) {
+                        setTimeout(function () {type2.prop('checked', false);}, 0);
+                    }
+                } else {
+                    types.push(val);
+                    if (type2) {
+                        setTimeout(function () {type2.prop('checked', true);}, 0);
+                    }
+                    
+                }
+            }
 
+            //$(event.target).blur();
+
+            if (optionList.indexOf(val) >= 0) {
+                if ((idx = regions.indexOf(val)) > -1) {
+                    console.log("clicking drop1", val);
+                    Object.keys(dataPositions2[val]).forEach(function(key) {
+                        for (var j = 0; j < dataPositions2[val][key].length; j ++) {
+                    
+                            addMarker(val, key, dataPositions2[val][key][j].lat, dataPositions2[val][key][j].lng, dataPositions2[val][key][j].title);
+                        }
+                        //console.log("adding  marker ", val, key);
+                        setMarkers(val, key, map) ;                            
+                    });
+                    
+                } else {
+                    console.log("unclicking drop1", val);
+                    Object.keys(dataPositions2[val]).forEach(function(key) {
+                        setMarkers(val, key, null) ;
+                        //console.log("deleting marker ", val, key);
+                    });
+                };
+            } else if (typeList.indexOf(val) >= 0){
+
+                if ((idx = types.indexOf(val)) > -1) {
+                    console.log("clicking drop2", val);
+                    for (var i = 0; i < regions.length; i++) {
+                        for (var j = 0; j < dataPositions2[regions[i]][val].length; j++) {
+                             addMarker(regions[i], val, dataPositions2[regions[i]][val][j].lat, dataPositions2[regions[i]][val][j].lng, dataPositions2[regions[i]][val][j].title);
+                            //Do something
+                        }
+                        setMarkers(regions[i], val, map) ;      
+                        //console.log("adding marker ", regions[i], val); 
+                    }
+                }
+                else {
+                    console.log("unclicking drop2", val);
+                    for (var i = 0; i < regions.length; i++) {
+                        /*
+                        for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
+                            //addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
+                            //setMarkers(val, key, null) ;       
+                            //Do something
+                        }
+                        */
+                        setMarkers(regions[i], val, null) ;     
+
+                        //console.log("deleting marker ", regions[i], val);
+                    }
+                }
+            }
+            localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+            console.log('checkboxValues', checkboxValues)
+        }
+        var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+        console.log('checkboxValues 0 ', checkboxValues)
+        // Loads Saved Data
+        Object.keys(checkboxValues).forEach(function(key, value) {
+            
+            var elm = document.getElementById(key);
+            console.log(key, value, elm.checked)
+            if (checkboxValues[key] != elm.checked) {
+                elm.click();
+                
+            }
+            console.log(key, value, elm.checked)
+            if (elm.checked){
+                processDropdownClick(key, false);
+            }
+        });
         $('.dropdown-menu a').on('click', function (event) {
         
             var $target = $(event.currentTarget),
             val = $target.attr('data-value'),
             $inp = $target.find('input'),
             idx;
+
         
+            
+            processDropdownClick(val, $inp);
+            $(event.target).blur();
+            
+            /*
             if ((idx = optionList.indexOf(val)) > -1) {
                 if ((idx = regions.indexOf(val)) > -1) {
                     regions.splice(idx, 1);
+                    checkboxValues[val] = false;
                     setTimeout(function () {$inp.prop('checked', false);}, 0);
                 } else {
                     regions.push(val);
+                    checkboxValues[val] = true;
                     setTimeout(function () {$inp.prop('checked', true);}, 0);
                 }
+                localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
             }
         
             if ((idx = typeList.indexOf(val)) > -1) {
@@ -684,20 +955,20 @@
                 else {
                     console.log("unclicking drop2", val);
                     for (var i = 0; i < regions.length; i++) {
-                        /*
-                        for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
+                        
+                        //for (var j = 0; j < dataPositions2[options[i]][val].length; j++) {
                             //addMarker(options[i],  val, dataPositions2[options[i]][val][j].lat, dataPositions2[options[i]][val][j].lng);
                             //setMarkers(val, key, null) ;       
                             //Do something
-                        }
-                        */
+                        //}
+                        
                         setMarkers(regions[i], val, null) ;     
 
                         console.log("deleting marker ", regions[i], val);
                     }
                 }
             }
-            
+            */
             
         
             console.log(regions);
@@ -721,10 +992,69 @@
         function addMarker(name, k2,  x, y, title) {
     
             // 마커를 생성합니다
-            var markerX = new kakao.maps.Marker({
-                position: new kakao.maps.LatLng(y, x),
-                zIndex:2
-            });
+            if (k2 == 'convenience') {
+
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon1
+                });
+ 
+            } else if (k2 == 'coffee') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon4
+                });
+            } else if (k2 == 'food') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image: icon3
+                });
+            } else if (k2 == 'bread') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image:   icon5
+                });
+            } else if (k2 == 'other') {   
+ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image:   icon2
+                });
+
+            } else if (k2 == 'hospital') {   
+                
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image:   icon6
+                });
+
+            } else if (k2 == 'mart') {   
+                
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image:   icon7
+                });
+
+
+
+
+
+            } else{ 
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2
+                });
+            }
 
             // 마커가 지도 위에 표시되도록 설정합니다
             markerX.setMap(map);
@@ -765,7 +1095,7 @@
                 
             });
             // 생성된 마커를 배열에 추가합니다
-            console.log("sdfsd", name, k2,  x, y, title);
+            //console.log("sdfsd", name, k2,  x, y, title);
             markers[name][k2].push(markerX);
             
         } 
@@ -784,7 +1114,7 @@
         function setMarkers(name, k2, map) {
             for (var l = 0; l < markers[name][k2].length; l++) {
                 markers[name][k2][l].setMap(map);
-                console.log(name, k2, l, map)
+                //console.log(name, k2, l, map)
             }            
         }
         /*
