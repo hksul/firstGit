@@ -35,7 +35,7 @@
         */
         /*#mapwrap{position:relative;overflow:hidden;}*/
         .category, .category *{margin:0;padding:0;color:#000;}   
-        .category {position:absolute;overflow:hidden;top:10px;left:10px;width:250px;height:52px;z-index:5;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:11px;text-align:center;background-color:#fff;border-radius: 5px;}
+        .category {position:absolute;overflow:hidden;top:10px;left:10px;width:300px;height:52px;z-index:5;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:11px;text-align:center;background-color:#fff;border-radius: 5px;}
         .category2 {position:absolute;overflow:hidden;top:10px;right:10px;width:40px;height:38px;z-index:20;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;}
         .category3 {position:absolute;overflow:visible;top:10px;right:10px;width:40px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;border-radius: 5px;border:0px;}
         .category .menu_selected {background:#339cf1;color:#fff;  } 
@@ -45,6 +45,7 @@
         .category .ico_store {background-position:-10px -36px;}  
         .category .ico_carpark {background:url('https://hkhomepage.netlify.app/img/category7.png') no-repeat; background-position:-10px -102px;} 
         .category .ico_bread {background:url('https://hkhomepage.netlify.app/img/category7.png') no-repeat; background-position:-10px -138px;} 
+        .category .ico_hospital {background:url('https://hkhomepage.netlify.app/img/places_category.png') no-repeat; background-position:-10px -138px;} 
         .category .ico_other {background-position:-10px -72px;} 
         .category .ico_current {background:url('https://hkhomepage.netlify.app/img/category4.png'); background-position:-10px -144px;}  
         .custom_zoomcontrol2 {position:absolute;top:60px;right:8px;width:36px;height:34px;overflow:hidden;z-index:1;background-color:#fff;} 
@@ -183,6 +184,10 @@
                     </li>
                     <li id="otherMenu" onclick="changeMarker('other')">
                         <span class="ico_comm ico_other  "></span>
+                        <div style="font-size:11px;">주유/주차</div>
+                    </li>
+                    <li id="otherMenu" onclick="changeMarker('hospital')">
+                        <span class="ico_comm ico_hospital  "></span>
                         <div style="font-size:11px;">주유/주차</div>
                     </li>
                     <!--
@@ -376,6 +381,16 @@
                 }
             );
 
+            var icon6 = new kakao.maps.MarkerImage(
+                'img/places_category.png',
+                new kakao.maps.Size(27, 34),
+                {
+                    //offset: new kakao.maps.Point(20, 64),
+                    spriteOrigin:new kakao.maps.Point(5, 138),
+                    spriteSize: new kakao.maps.Size(72, 208)
+                }
+            );
+
             var container = document.getElementById('map');
             var options = {
                 center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -385,7 +400,7 @@
             var map = new kakao.maps.Map(container, options);
             var markers = {};
             var optionList = ['dongjak','sungdong','jongro','yongsan','joonggu' ,'dongdaemoon' ,'seocho' ,'mapo' ,'kwanak' ,'kwangjin' ,'songpa' ,'seodaemoon' ,'guro'  ,'nowon','dobong','gangseo','gangdong','sungbook','kangbook','yangcheon','eunpyoung','geumcheon','yungdeungpo', 'gangnam']
-            var typeList = ['coffee', 'food', 'convenience', 'other', 'bread']
+            var typeList = ['coffee', 'food', 'convenience', 'other', 'bread', 'hospital']
             for (var i = 0; i < optionList.length; i++) {
                 markers[optionList[i]] = {}
                 for (var j = 0; j < typeList.length; j++) {
@@ -478,6 +493,7 @@
                 var carparkMenu = document.getElementById('carparkMenu');
                 var breadMenu = document.getElementById('breadMenu');
                 var otherMenu = document.getElementById('otherMenu');
+                var hospitalMenu = document.getElementById('hospitalMenu');
                 
                 // 커피숍 카테고리가 클릭됐을 때
                 if (type === 'coffee') {
@@ -488,6 +504,7 @@
                     carparkMenu.className = '';
                     breadMenu.className = '';
                     otherMenu.className = '';
+                    hospitalMenu.className = '';
                     
                     // 커피숍 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("coffee")
@@ -495,6 +512,7 @@
                     hideMarkerType("convenience")
                     hideMarkerType("bread")
                     hideMarkerType("other")
+                    hideMarkerType("hospital")
                     
                 
                     
@@ -506,6 +524,7 @@
                     carparkMenu.className = '';
                     breadMenu.className = '';
                     otherMenu.className = '';
+                    hospitalMenu.className = '';
                     
                     
                     // 편의점 마커들만 지도에 표시하도록 설정합니다
@@ -514,7 +533,8 @@
                     hideMarkerType("coffee")
                     hideMarkerType("bread")
                     hideMarkerType("other")
-                    
+                    hideMarkerType("hospital")
+
                 } else if (type === 'food') { // 주차장 카테고리가 클릭됐을 때
                 
                     // 주차장 카테고리를 선택된 스타일로 변경하고
@@ -523,7 +543,7 @@
                     carparkMenu.className = 'menu_selected';
                     breadMenu.className = '';
                     otherMenu.className = '';
-                    
+                    hospitalMenu.className = '';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("food")
@@ -531,6 +551,8 @@
                     hideMarkerType("coffee")
                     hideMarkerType("bread")
                     hideMarkerType("other")
+                    hideMarkerType("hospital")
+
                 }    else if (type === 'bread') { // 주차장 카테고리가 클릭됐을 때
                     
                     // 주차장 카테고리를 선택된 스타일로 변경하고
@@ -539,7 +561,7 @@
                     carparkMenu.className ='';
                     breadMenu.className = 'menu_selected';
                     otherMenu.className = '';
-                    
+                    hospitalMenu.className = '';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("bread")
@@ -547,6 +569,8 @@
                     hideMarkerType("coffee")
                     hideMarkerType("convenience")
                     hideMarkerType("other")
+                    hideMarkerType("hospital")
+
                 }    else if (type === 'other') { // 주차장 카테고리가 클릭됐을 때
                     
                     // 주차장 카테고리를 선택된 스타일로 변경하고
@@ -555,7 +579,7 @@
                     carparkMenu.className ='';
                     breadMenu.className = '';
                     otherMenu.className = 'menu_selected';
-                    
+                    hospitalMenu.className = '';
                     
                     // 주차장 마커들만 지도에 표시하도록 설정합니다
                     showMarkerType("other")
@@ -563,7 +587,26 @@
                     hideMarkerType("coffee")
                     hideMarkerType("bread")
                     hideMarkerType("convenience")
-                }    
+                    hideMarkerType("hospital")
+
+                }    else if (type === 'hospital') { // 주차장 카테고리가 클릭됐을 때
+                    
+                    // 주차장 카테고리를 선택된 스타일로 변경하고
+                    coffeeMenu.className = '';
+                    storeMenu.className = '';
+                    carparkMenu.className ='';
+                    breadMenu.className = '';
+                    otherMenu.className = '';
+                    hospitalMenu.className = 'menu_selected';
+                    
+                    // 주차장 마커들만 지도에 표시하도록 설정합니다
+                    showMarkerType("hospital")
+                    hideMarkerType("food")
+                    hideMarkerType("coffee")
+                    hideMarkerType("bread")
+                    hideMarkerType("convenience")
+                    hideMarkerType("other")
+                }      
             } 
             /*
             function setMapType(maptype) { 
@@ -673,7 +716,7 @@
     <script src='js/data.json'></script>
     <script id="rendered-js">
         var regions = [];
-        var types = ['coffee', 'food', 'convenience', 'other', 'bread']
+        var types = ['coffee', 'food', 'convenience', 'other', 'bread', 'hospital']
         var infowindow = new kakao.maps.InfoWindow({zIndex:4});
         /*
         var tmpPosition = new kakao.maps.LatLng(37.49887, 127.026581);  
@@ -939,6 +982,15 @@
                     zIndex:2,
                     image:   icon2
                 });
+
+            } else if (k2 == 'hospital') {   
+                
+                var markerX = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(y, x),
+                    zIndex:2,
+                    image:   icon6
+                });
+
 
 
 
