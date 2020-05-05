@@ -55,16 +55,16 @@ body, html {height: 100%;}
 }
 
 .ad-banner {
-    width: 420px;
-    height: 100px;
+    width: 320px;
+    height: 50px;
     margin: 0 auto;
-    bottom: 60px;
+    bottom: 10px;
     left: 8px;
     position: absolute;
     overflow: hidden;
     z-index: 20;    
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 0px;
     border: 0px;
 }
 
