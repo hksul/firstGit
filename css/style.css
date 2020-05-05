@@ -56,6 +56,7 @@ body, html {height: 100%;}
 
 .ad-banner {
     width: 420px;
+    height: 100px;
     margin: 0 auto;
     bottom: 60px;
     left: 8px;
