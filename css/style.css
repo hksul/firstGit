@@ -58,8 +58,9 @@ body, html {height: 100%;}
     width: 320px;
     height: 50px;
     margin: 0 auto;
-    bottom: 10px;
-    left: 8px;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(0%, -50%);
     position: absolute;
     overflow: hidden;
     z-index: 20;    
