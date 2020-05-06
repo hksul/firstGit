@@ -57,7 +57,7 @@ body, html {height: 100%;}
 .ad-banner {
   width: 320px;
   height: 50px;
-  margin: 0 auto;
+  margin: 0 0;
   bottom: 60px;
   left: 50%;
   transform: translate(-50%,50%);
