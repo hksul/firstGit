@@ -1,0 +1,96 @@
+h1  {
+  text-align: center;
+  color: #228ae6;
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+h1 span:nth-child(3){
+  color:red;
+}
+h1 span:nth-child(1){
+  color:#319dd4;
+}
+
+.search-bar{ 
+  width:300px
+}
+
+.container  {
+  text-align: left; 
+}
+#dm1 {
+  text-align: : left;
+  
+}
+
+#dm2 {
+  text-align: : right;
+}
+
+body, html {height: 100%;}
+.button-group{
+  position:absolute;
+  overflow:visible;
+  top:10px; 
+  right:10px;
+  /*width:74px;*/
+  width:44px;
+  height:30px;    
+  z-index:10;
+  border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;
+  font-size:12px;
+  text-align:center;
+  background-color:#fff;
+  border-radius: 5px;
+}
+.dropdown-menu{
+  font-size:16px;;
+  
+}
+.dropdown-menu li a{
+  margin-left: 0px;
+  padding:1px 1px 1px 10px;
+  
+}
+
+.ad-banner {
+  width: 320px;
+  height: 50px;
+  margin: 0 auto;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%,-10%);
+  position: absolute;
+  overflow: hidden;
+  z-index: 20;    
+  background-color: #fff;  
+  border: 0px;
+}
+
+/*
+
+width:40px;height:50px;z-index:10;border:0px solid black;font-family:'Malgun Gothic','맑은 고딕',sans-serif;font-size:12px;text-align:center;background-color:#fff;border-radius: 5px;border:1px;}
+
+
+.navbar-light  {
+  background-color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.navbar-brand {
+  float: left;
+  height: 25px;
+  padding: 0px 0px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.navbar-toggler {
+  padding: 0px 0px;
+  text-align: right;
+}
+
+.nav-distance{
+  padding: 2.1% 7.7%;
+}
+*/
