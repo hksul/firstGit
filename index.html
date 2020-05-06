@@ -24,10 +24,12 @@
       color="#111"
     />
     <title>ZeroPay MAP - 제로페이 맵</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"
     />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -232,11 +234,13 @@
       property="og:image"
       content="http://zeropaymap.com/img/favicon2.png"
     />
+    <!--
     <script
       data-ad-client="ca-pub-3423763568069065"
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
     ></script>
+    -->
   </head>
   <body translate="no">
     <!--
@@ -416,7 +420,7 @@
           />
         </span>
       </div>
-      <div class="ad-banner shadow mb-5">
+      <div class="ad-banner">
         <ins
           class="kakao_ad_area"
           style="display: none;"
@@ -708,8 +712,8 @@
 
         var container = document.getElementById("map");
         var options = {
-          center: new kakao.maps.LatLng(33.450701, 126.570667),
-          level: 4,
+          center: new kakao.maps.LatLng(37.715133, 126.734086),
+          level: 3,
         };
         var markerImageSrc2 =
           "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png"; // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
@@ -1069,7 +1073,7 @@
         <div class="search-bar input-group mb-3 mx-auto mt-5 ">
             <input name="q" type="text" class="form-control rounded-pill" placeholder="Google 검색어를 입력하세요" aria-label="Recipient's username" aria-describedby="basic-addon2">
             
-        </div>
+        </div>   
     </form>
     <button id = "bToggle">Toggle</button>
     <br />
@@ -1407,7 +1411,7 @@
           //customOverlay.open(map, markerX);
 
           /*
-                if (clickedOverlay) {   
+                if (clickedOverlay) {
                         clickedOverlay.setMap(null);
                     }
                     customOverlay.setContent('<div style="padding:5px;font-size:12px;">' + title + '</div>');
