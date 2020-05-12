@@ -197,10 +197,10 @@
 
       .custom_zoomcontrol {
         position: absolute;
-        bottom: 30px;
+        bottom: 40px;
         right: 20px;
-        width: 78px;
-        height: 36px;
+        width: 30px;
+        height: 32px;
         overflow: hidden;
         z-index: 1;
         background-color: #fff;
@@ -411,6 +411,7 @@
                 </div>        
             -->
       <div class="custom_zoomcontrol shadow mb-5">
+        <!--
         <span>
           <img
             src="img/myLoc.png"
@@ -419,6 +420,8 @@
             onclick="moveToCurrent()"
           />
         </span>
+        -->
+        <span class="screen_current" onclick="moveToCurrent()"></span>
       </div>
       <div class="ad-banner">
         <ins
@@ -1465,6 +1468,6 @@
       type="text/javascript"
       src="//t1.daumcdn.net/kas/static/ba.min.js"
       async
-    ></script>    
+    ></script>
   </body>
 </html>
