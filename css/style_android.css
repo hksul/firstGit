@@ -63,11 +63,11 @@ body, html {height: 100%;}
 .screen_current {
   display: block;
   position: relative;
-  width: 30px;
-  height: 32px;
-  /*padding: 1px 3px 5px;*/
-  
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png") no-repeat -155px -450px;  
+  width: 60px;
+  height: 60px;
+  /*padding: 1px 3px 5px;*/  
+  background-size: 300px 500px;
+  background: url("https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/img_search.png") no-repeat -155px -450px ;  
 }
 .ad-banner {
   width: 320px;
