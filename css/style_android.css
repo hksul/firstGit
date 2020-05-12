@@ -59,7 +59,11 @@ body, html {height: 100%;}
   display:inline-block; width:65px; line-height:200%;  
   
 }
-
+.glyphicon.glyphicon-screenshot {
+  font-size: 38px;
+  width: 40px;
+  height: 40px;
+}
 .screen_current {
   display: block;
   position: relative;
